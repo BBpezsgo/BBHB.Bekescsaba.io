@@ -19,5 +19,5 @@ Készíts weboldalt, amely bemutatja a fenti témát. Legalább 20 tétel legyen
 # Csapat tagjai:
 - Barkóczi Vivien
 - [Bencsik Attila](https://github.com/Sco-Ttt)
-- Hugyecz Máté
+- [Hugyecz Máté](https://github.com/Hmate11)
 - [Bánszky Balázs](https://github.com/BBpezsgo)
