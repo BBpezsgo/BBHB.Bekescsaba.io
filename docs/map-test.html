@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        #debug {
+            background-color: #222;
+            color: #ddd;
+            padding: 5px;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        body {            
+            background-image: url('./graphics/bg.png');
+            background-size: 64px;
+            image-rendering: pixelated;
+        }
+
+        .map-frame {
+            width: 500px;
+            height: 500px;
+            border-width: 7px;
+            border-image-source: url('./graphics/border.png');
+            border-image-width: 9px;
+            border-image-slice: 4;
+            border-image-repeat: repeat;
+        }
+    </style>
+
+    <script>
+        var markers = []
+        fetch('./map-markers.json')
+        .then((response) => {
+            response.json()
+            .then((json) => {
+                markers = json.markers
+            })
+        })
+
+        /** @param {MouseEvent} e */
+        window.OnMarkerClicked = (e) => {
+            const castle = markers[e.target.id.substring(11)]
+        }
+    </script>
+</head>
+
+<body>
+    <iframe src="./map.html" class="map-frame"></iframe>
+
+    <p id="debug">
+
+    </p>
+</html>
