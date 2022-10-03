@@ -1,12 +1,156 @@
 {
     "markers": [
         {
-            "x": 50,
-            "y": 50
+            "x": 46.5718873980706,
+            "y": 20.941501350333258,
+            "data": {
+                "name": "Beliczay-Kastély"
+            }
         },
         {
-            "x": 80,
-            "y": 20
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Wenckheim-Merán-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Andrássy-Almásy kastély                "
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Hunyadi Kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Wenckheim-Kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Almásy-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Wenckheim-kastély és Zenepavilon"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Fried-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Széchényi-Wenckheim kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Váserhelyi-Bréda-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Bolza-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Gyulavári kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Batthyány-Geist kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Wenckheim-hoyos-Wenckheim vadászkastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Kárász-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Léderer-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Gyulai Almásy-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Telbisz-kastély"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Geist-kastély (Geist-Reckmann-kastély)"
+            }
+        },
+        {
+            "x": 000000000,
+            "y": 000000000,
+            "data": {
+                "name": "Babó-kastély"
+            }
         }
-    ]
+    ],
+    "top-left": {
+        "lat": 47.238569,
+        "lon": 20.291417
+    },
+    "bottom-right": {
+        "lat": 46.254034,
+        "lon": 21.731981
+    },
+    "map-size": {
+        "width": 955,
+        "height": 946
+    }
 }
