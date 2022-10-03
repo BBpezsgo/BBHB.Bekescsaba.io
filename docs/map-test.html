@@ -43,6 +43,13 @@
         window.OnMarkerClicked = (e) => {
             const castle = markers[e.target.id.substring(11)]
         }
+
+        /** @param {Event} e */
+        const OnChange = (e) => {
+            const element = document.getElementsByTagName('input')[0]
+            const mapIframe = document.getElementsByTagName('iframe')[0]
+            mapIframe.contentWindow.OnZoom(element.value / 100)
+        }
     </script>
 </head>
 
@@ -52,4 +59,6 @@
     <p id="debug">
 
     </p>
+
+    <input type="range" min="100" max="500" onchange="OnChange(event)">
 </html>
