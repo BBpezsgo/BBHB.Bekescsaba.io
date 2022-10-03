@@ -54,13 +54,38 @@
             response.json()
             .then((json) => {
                 const markers = json.markers
+
+                /** @type {{lon: number, lat: number}} */
+                const topLeft = json["top-left"]
+                /** @type {{lon: number, lat: number}} */
+                const bottomRight = json["bottom-right"]
+                const bottomRight2 = {
+                    lon: bottomRight.lon - topLeft.lon,
+                    lat: bottomRight.lat - topLeft.lat,
+                }
+                /** @type {{width: number, height: number}} */
+                const mapSize = json["map-size"]
+
                 const container = document.getElementById('container')
                 var idCounter = 0
                 markers.forEach(marker => {
                     const node = document.createElement("div")
+
+                    /** @type {{x: number, y: number}} */
+                    const markerPosition = { x: marker.x, y: marker.y }
+
+                    markerPosition.x -= topLeft.lat
+                    markerPosition.y -= topLeft.lon
+                    
+                    markerPosition.x /= bottomRight2.lat
+                    markerPosition.y /= bottomRight2.lon
+                    
+                    markerPosition.x *= mapSize.width
+                    markerPosition.y *= mapSize.height
+
                     node.className = 'marker'
-                    node.style.top = marker.y
-                    node.style.left = marker.x
+                    node.style.left = markerPosition.y
+                    node.style.top = markerPosition.x
                     node.id = 'map-marker-' + idCounter
                     node.onclick = OnMarkerClicked
                     node.onmousedown = OnMarkerMouseDown
