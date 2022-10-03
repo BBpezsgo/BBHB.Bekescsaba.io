@@ -33,11 +33,25 @@
             background-image: url(./map.png);
             background-size: contain;
             background-repeat: no-repeat;
-        "></div>
+        " id="map"></div>
     </div>
 
     <script>
+        const MapElement = document.getElementById('map')
+        const container = document.getElementById('container')
+        var zoomAmmount = 1
+
         var clickedOnMap = true
+
+        /** @type {{lon: number, lat: number}} */
+        const topLeft = {}
+        /** @type {{lon: number, lat: number}} */
+        const bottomRight = {}
+        const bottomRight2 = {}
+        /** @type {{width: number, height: number}} */
+        const mapSize = {}
+
+        var markers = []
 
         const OnMarkerClicked = (e) => {
             window.parent.OnMarkerClicked(e)
@@ -53,47 +67,69 @@
         .then((response) => {
             response.json()
             .then((json) => {
-                const markers = json.markers
+                markers = json.markers
 
-                /** @type {{lon: number, lat: number}} */
-                const topLeft = json["top-left"]
-                /** @type {{lon: number, lat: number}} */
-                const bottomRight = json["bottom-right"]
-                const bottomRight2 = {
-                    lon: bottomRight.lon - topLeft.lon,
-                    lat: bottomRight.lat - topLeft.lat,
-                }
-                /** @type {{width: number, height: number}} */
-                const mapSize = json["map-size"]
+                topLeft.lon = json["top-left"].lon
+                topLeft.lat = json["top-left"].lat
+                
+                bottomRight.lon = json["bottom-right"].lon
+                bottomRight.lat = json["bottom-right"].lat
 
-                const container = document.getElementById('container')
-                var idCounter = 0
-                markers.forEach(marker => {
-                    const node = document.createElement("div")
+                bottomRight2.lon = bottomRight.lon - topLeft.lon
+                bottomRight2.lat = bottomRight.lat - topLeft.lat
 
-                    /** @type {{x: number, y: number}} */
-                    const markerPosition = { x: marker.x, y: marker.y }
-
-                    markerPosition.x -= topLeft.lat
-                    markerPosition.y -= topLeft.lon
-                    
-                    markerPosition.x /= bottomRight2.lat
-                    markerPosition.y /= bottomRight2.lon
-                    
-                    markerPosition.x *= mapSize.width
-                    markerPosition.y *= mapSize.height
-
-                    node.className = 'marker'
-                    node.style.left = markerPosition.y
-                    node.style.top = markerPosition.x
-                    node.id = 'map-marker-' + idCounter
-                    node.onclick = OnMarkerClicked
-                    node.onmousedown = OnMarkerMouseDown
-                    container.appendChild(node)
-                    idCounter++
-                })
+                mapSize.width = json["map-size"].width
+                mapSize.height = json["map-size"].height
+                Update()
             })
         })
+
+        function removeElementsByClass(className){
+            const elements = document.getElementsByClassName(className);
+            while(elements.length > 0){
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        }
+
+        const Update = () => {
+            removeElementsByClass('marker')
+            /*
+            for (let i = 0; i < container.childNodes.length; i++) {
+                const child = container.childNodes[i]
+                if (child.className !== 'marker') { continue }
+                container.removeChild(child)                
+            }
+            */
+
+            MapElement.style.width = mapSize.width * zoomAmmount
+            MapElement.style.height = mapSize.height * zoomAmmount
+
+            var idCounter = 0
+            markers.forEach(marker => {
+                const node = document.createElement("div")
+
+                /** @type {{x: number, y: number}} */
+                const markerPosition = { x: marker.x, y: marker.y }
+
+                markerPosition.x -= topLeft.lat
+                markerPosition.y -= topLeft.lon
+                
+                markerPosition.x /= bottomRight2.lat
+                markerPosition.y /= bottomRight2.lon
+                
+                markerPosition.x *= mapSize.width * zoomAmmount
+                markerPosition.y *= mapSize.height * zoomAmmount
+
+                node.className = 'marker'
+                node.style.left = markerPosition.y
+                node.style.top = markerPosition.x
+                node.id = 'map-marker-' + idCounter
+                node.onclick = OnMarkerClicked
+                node.onmousedown = OnMarkerMouseDown
+                container.appendChild(node)
+                idCounter++
+            })
+        }
         
         const ele = document.getElementById('container')
         ele.style.cursor = 'grab'
@@ -145,6 +181,30 @@
         // Attach the handler
         ele.addEventListener('mousedown', mouseDownHandler)
         // document.getElementById('mapimage').ondragstart = function () { return false; }
+    
+        window.OnZoom = (value) => {
+            var lastZoomAmmount = zoomAmmount
+            zoomAmmount = value
+            var zoomDifference = lastZoomAmmount - zoomAmmount
+
+            const viewportPosition = {
+                x: ele.scrollLeft / mapSize.width,
+                y: ele.scrollTop / mapSize.height
+            }
+
+            const sizedMapSize = {
+                width: mapSize.width * zoomAmmount,
+                height: mapSize.height * zoomAmmount
+            }
+
+            viewportPosition.x *= sizedMapSize.width
+            viewportPosition.y *= sizedMapSize.height
+
+            ele.scrollTop = viewportPosition.y
+            ele.scrollLeft = viewportPosition.x
+
+            Update()
+        }
     </script>
 </body>
 
