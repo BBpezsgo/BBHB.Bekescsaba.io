@@ -75,8 +75,9 @@
 
         var markers = []
 
+        /** @param {MouseEvent} e */
         const OnMarkerClicked = (e) => {
-            window.parent.OnMarkerClicked(e)
+            window.parent.OnMarkerClicked(e.target.id.replace('-shadow', ''))
         }
 
         const OnMarkerMouseDown = (e) => {
@@ -144,6 +145,7 @@
                 markerPosition.y *= mapSize.height * zoomAmmount
 
                 nodeChild.className = 'marker-shadow'
+                nodeChild.id = 'map-marker-shadow-' + idCounter
                 node.appendChild(nodeChild)
 
                 node.className = 'marker'

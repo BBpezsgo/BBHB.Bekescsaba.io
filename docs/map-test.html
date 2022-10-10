@@ -126,7 +126,7 @@
              *  name: string
              * }
              * }} */
-            const castle = markers[e.target.id.substring(11)]
+            const castle = markers[e.substring(11)]
             castleInfo.style.display = 'block'
             castleInfo.getElementsByTagName('h1')[0].innerText = castle.data.name
         }
