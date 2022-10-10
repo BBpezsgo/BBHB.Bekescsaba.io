@@ -14,16 +14,19 @@
             width: fit-content;
         }
 
-        body {            
+        body {
             background-image: url('./graphics/bg.png');
             background-size: 64px;
             image-rendering: pixelated;
             font-family: Courier;
+            overflow-x: hidden;
         }
 
         .map-frame {
-            width: 500px;
-            height: 500px;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+
+            margin: 10px;
 
             border-width: 7px;
             border-image-source: url('./graphics/border.png');
@@ -58,6 +61,7 @@
 
         #castle-info > img {
             border: 2px solid #ffd182;
+            width: 100%;
         }
 
         #castle-info > p {

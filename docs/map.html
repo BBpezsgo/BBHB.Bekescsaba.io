@@ -9,6 +9,9 @@
         body {
             margin: 0;
             overflow: hidden;
+            background-image: url('./graphics/map-bg.png');
+            background-size: 64px;
+            image-rendering: pixelated;
         }
 
         .marker {
@@ -61,7 +64,7 @@
     <script>
         const MapElement = document.getElementById('map')
         const container = document.getElementById('container')
-        var zoomAmmount = 1
+        var zoomAmmount = 2
 
         var clickedOnMap = true
 
