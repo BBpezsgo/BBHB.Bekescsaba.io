@@ -16,20 +16,96 @@
             background-image: url('./graphics/bg.png');
             background-size: 64px;
             image-rendering: pixelated;
+            font-family: Courier;
         }
 
         .map-frame {
             width: 500px;
             height: 500px;
+
             border-width: 7px;
             border-image-source: url('./graphics/border.png');
             border-image-width: 9px;
             border-image-slice: 4;
             border-image-repeat: repeat;
         }
+
+        #castle-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 20px;
+
+            background-image: url('./graphics/bg2.png');
+            background-size: 8px;
+            image-rendering: pixelated;
+
+
+            border: 2px solid #ffd182;
+
+            padding: 20px;
+
+            min-width: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        #castle-info > h1 {
+            font-size: 24px;
+        }
+
+        #castle-info > img {
+            border: 2px solid #ffd182;
+        }
+
+        #castle-info > p {
+            width: min-content;
+            min-width: calc(100% - 1em);
+            box-sizing: border-box;
+        }
+
+        .close-btn {
+            float: right;
+            cursor: pointer;
+        }
+
+        .close-btn > img {
+            width: 32px;
+            height: 32px;
+            pointer-events: none;
+        }
+
+        .close-btn:hover > img {
+            filter: drop-shadow(0px 0px 4px #a76e32);
+        }
     </style>
+</head>
+
+<body>
+    <div id="castle-info" style="display: none;">
+        <div class="close-btn" onclick="document.getElementById('castle-info').style.display = 'none'">
+            <img src="./graphics/x.png">
+        </div>
+
+        <h1>KASTÉLY NEVE</h1>
+
+        <img src="https://i.pinimg.com/originals/41/a2/a5/41a2a560f6af4ea3e04b487ad9710e2c.jpg">
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo id sem commodo finibus. Donec eu felis ac velit rutrum efficitur in et odio. Curabitur id leo suscipit turpis volutpat ultrices. Vivamus sit amet lacus purus. Cras tincidunt pulvinar nisl. Vestibulum hendrerit ligula libero, ut feugiat velit eleifend nec. Proin quam dui, consectetur ut orci quis, porttitor porta ante. Maecenas ac lobortis nibh. Maecenas et leo a sapien placerat viverra nec id velit. Sed in dolor egestas, porta ex quis, hendrerit lacus. In hac habitasse platea dictumst. Aenean ac pharetra lacus. Maecenas ac porttitor risus.
+        </p>
+    </div>
+    <iframe src="./map.html" class="map-frame"></iframe>
+
+    <p id="debug">
+
+    </p>
+
+    <input type="range" min="100" max="500" onchange="OnChange(event)">
 
     <script>
+        const castleInfo = document.getElementById('castle-info')
+
         var markers = []
         fetch('./map-markers.json')
         .then((response) => {
@@ -41,7 +117,16 @@
 
         /** @param {MouseEvent} e */
         window.OnMarkerClicked = (e) => {
+            /** @type {{
+             * x: number,
+             * y: number,
+             * data: {
+             *  name: string
+             * }
+             * }} */
             const castle = markers[e.target.id.substring(11)]
+            castleInfo.style.display = 'block'
+            castleInfo.getElementsByTagName('h1')[0].innerText = castle.data.name
         }
 
         /** @param {Event} e */
@@ -51,14 +136,4 @@
             mapIframe.contentWindow.OnZoom(element.value / 100)
         }
     </script>
-</head>
-
-<body>
-    <iframe src="./map.html" class="map-frame"></iframe>
-
-    <p id="debug">
-
-    </p>
-
-    <input type="range" min="100" max="500" onchange="OnChange(event)">
 </html>
