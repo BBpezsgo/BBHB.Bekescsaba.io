@@ -1,0 +1,302 @@
+<html>
+
+<head>
+    <script>document.addEventListener('contextmenu', event => event.preventDefault())</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url('./graphics/map-bg.png');
+            background-size: 64px;
+            image-rendering: pixelated;
+        }
+
+        .marker {
+            width: 32px;
+            height: 32px;
+            background-image: url('./graphics/marker.png');
+            cursor: pointer;
+            position: absolute;
+            background-size: 100%;
+            image-rendering: pixelated;
+            transform: translate(-50%, -100%);
+            transition: transform 200ms;
+        }
+
+        .marker > .marker-shadow {
+            background-image: url('./graphics/marker-shadow.png');
+            background-size: contain;
+            width: 48px;
+            height: 48px;
+            transform: translate(-3px, 2px);
+            transition: transform 200ms, filter 200ms;
+            opacity: .4;
+        }
+
+        .marker:hover {
+            transform: translate(-50%, -100%) translateY(-5px);
+        }
+
+        .marker:hover > .marker-shadow {
+            background-image: url('./graphics/marker-shadow.png');
+            background-size: contain;
+            width: 48px;
+            height: 48px;
+            transform: translate(6px, 2px) translateY(5px);
+            filter: blur(1px);
+        }
+    </style>
+</head>
+
+<body id="container">
+    <div style="
+            width: 955px;
+            height: 946px;
+            background-image: url(./map.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        " id="map"></div>
+    </div>
+
+    <script>
+        const MapElement = document.getElementById('map')
+        const container = document.getElementById('container')
+        var zoomAmmount = 1
+
+        var clickedOnMap = true
+
+        /** @type {{lon: number, lat: number}} */
+        const topLeft = {}
+        /** @type {{lon: number, lat: number}} */
+        const bottomRight = {}
+        const bottomRight2 = {}
+        /** @type {{width: number, height: number}} */
+        const mapSize = {}
+
+        var markers = []
+
+        /** @param {MouseEvent} e */
+        const OnMarkerClicked = (e) => {
+            window.parent.OnMarkerClicked(e.target.id.replace('-shadow', ''))
+        }
+
+        const OnMarkerMouseDown = (e) => {
+            setTimeout(() => {
+                clickedOnMap = false
+            }, 1)
+        }
+
+        fetch('./map-markers.json')
+        .then((response) => {
+            response.json()
+            .then((json) => {
+                markers = json.markers
+
+                topLeft.lon = json["top-left"].lon
+                topLeft.lat = json["top-left"].lat
+                
+                bottomRight.lon = json["bottom-right"].lon
+                bottomRight.lat = json["bottom-right"].lat
+
+                bottomRight2.lon = bottomRight.lon - topLeft.lon
+                bottomRight2.lat = bottomRight.lat - topLeft.lat
+
+                mapSize.width = json["map-size"].width
+                mapSize.height = json["map-size"].height
+                Update()
+            })
+        })
+
+        function removeElementsByClass(className){
+            const elements = document.getElementsByClassName(className);
+            while(elements.length > 0){
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        }
+
+        const Update = () => {
+            removeElementsByClass('marker')
+            /*
+            for (let i = 0; i < container.childNodes.length; i++) {
+                const child = container.childNodes[i]
+                if (child.className !== 'marker') { continue }
+                container.removeChild(child)                
+            }
+            */
+
+            MapElement.style.width = mapSize.width * zoomAmmount
+            MapElement.style.height = mapSize.height * zoomAmmount
+
+            var idCounter = 0
+            markers.forEach(marker => {
+                const node = document.createElement("div")
+                const nodeChild = document.createElement("div")
+
+                /** @type {{x: number, y: number}} */
+                const markerPosition = { x: marker.x, y: marker.y }
+
+                markerPosition.x -= topLeft.lat
+                markerPosition.y -= topLeft.lon
+                
+                markerPosition.x /= bottomRight2.lat
+                markerPosition.y /= bottomRight2.lon
+                
+                markerPosition.x *= mapSize.width * zoomAmmount
+                markerPosition.y *= mapSize.height * zoomAmmount
+
+                nodeChild.className = 'marker-shadow'
+                nodeChild.id = 'map-marker-shadow-' + idCounter
+                node.appendChild(nodeChild)
+
+                node.className = 'marker'
+                node.style.left = markerPosition.y
+                node.style.top = markerPosition.x
+                node.id = 'map-marker-' + idCounter
+                node.onclick = OnMarkerClicked
+                node.onmousedown = OnMarkerMouseDown
+                container.appendChild(node)
+                idCounter++
+            })
+        }
+        
+        const ele = document.getElementById('container')
+        ele.style.cursor = 'grab'
+
+        let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+        const mouseDownHandler = function (e) {
+            // ele.style.cursor = 'grabbing';
+            ele.style.userSelect = 'none'
+
+            clickedOnMap = true
+
+            setTimeout(() => {
+                if (clickedOnMap == false) { return }
+
+                pos = {
+                    left: ele.scrollLeft,
+                    top: ele.scrollTop,
+                    // Get the current mouse position
+                    x: e.clientX,
+                    y: e.clientY,
+                }
+
+                window.parent.document.getElementById('debug').innerText = `${pos.x + pos.left} - ${pos.y + pos.top}`
+
+                document.addEventListener('mousemove', mouseMoveHandler)
+                document.addEventListener('mouseup', mouseUpHandler)
+            }, 2);
+        }
+
+        const mouseMoveHandler = function (e) {
+            // How far the mouse has been moved
+            const dx = e.clientX - pos.x
+            const dy = e.clientY - pos.y
+
+            // Scroll the element
+            ele.scrollTop = pos.top - dy
+            ele.scrollLeft = pos.left - dx
+        }
+
+        const ViewportNormalizedPositionTopLeft = () => {
+            return {
+                x: ele.scrollLeft / ele.scrollWidth,
+                y: ele.scrollTop / ele.scrollHeight
+            }
+        }
+
+        const mouseUpHandler = function () {
+            ele.style.cursor = 'grab';
+            ele.style.removeProperty('user-select');
+
+            document.removeEventListener('mousemove', mouseMoveHandler)
+            document.removeEventListener('mouseup', mouseUpHandler)
+        }
+
+        // Attach the handler
+        ele.addEventListener('mousedown', mouseDownHandler)
+        // document.getElementById('mapimage').ondragstart = function () { return false; }
+    
+        window.OnZoom = (value) => {
+            zoomAmmount = value
+            const scrollPos = ViewportNormalizedPositionTopLeft()
+            ele.scrollLeft = mapSize.width * scrollPos.x * value
+            ele.scrollTop = mapSize.height * scrollPos.y * value
+            Update()
+        }
+    </script>
+</body>
+
+</html>
+
+<!--
+        <script>
+            $(function () {
+                return
+                $("#container").load("./map.svg")
+            })
+
+            const SetColors = () => {
+                return;
+                const paths = document.getElementsByTagName('path')
+                for (let i = 0; i < paths.length; i++) {
+                    const path = paths[i]
+                    const SetColor = (color) => {
+                        path.style.fill = color
+                    }
+                    const pathColor = path.style.fill
+                    if (pathColor == undefined) { continue }
+                    if (pathColor == null) { continue }
+                    if (pathColor.startsWith('rgb') == false) { continue }
+                    switch (pathColor) {
+                        case 'rgb(238, 240, 213)':
+                        case 'rgb(173, 209, 158)':
+                        case 'rgb(170, 203, 175)':
+                        case 'rgb(222, 246, 192)':
+                        case 'rgb(205, 235, 176)':
+                        case 'rgb(201, 225, 191)':
+                        case 'rgb(214, 217, 159)':
+                        case 'rgb(174, 223, 163)':
+                        case 'rgb(233, 231, 226)':
+                        case 'rgb(200, 215, 171)':
+                        case 'rgb(223, 252, 226)':
+                        case 'rgb(182, 181, 146)':
+                        case 'rgb(200, 250, 204)':
+                        case 'rgb(199, 199, 180)':
+                        case 'rgb(170, 224, 203)':
+                        case 'rgb(255, 241, 186)':
+                        case 'rgb(203, 177, 154)':
+                            SetColor('rgb(205, 235, 176)')
+                            break;
+                        case 'rgb(132, 97, 196)':
+                            SetColor('rgb(255, 0, 255)')
+                            break;
+                        case 'rgb(230, 230, 230)':
+                        case 'rgb(208, 208, 208)':
+                        case 'rgb(197, 195, 195)':
+                        case 'rgb(235, 219, 232)':
+                        case 'rgb(218, 218, 224)':
+                        case 'rgb(239, 200, 200)':
+                        case 'rgb(236, 205, 209)':
+                        case 'rgb(255, 85, 85)':
+                        case 'rgb(245, 220, 186)':
+                            SetColor('rgb(197, 195, 195)')
+                            break;
+                        case 'rgb(170, 211, 223)':
+                            SetColor('rgb(170, 211, 223)')
+                            break;
+                        default:
+                            console.log(pathColor)
+                            break;
+                    }
+                }
+         
+            }
+      
+            setTimeout(SetColors, 2000);
+            
+        </script>
+        -->
