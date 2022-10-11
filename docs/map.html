@@ -2,8 +2,8 @@
 
 <head>
     <script>document.addEventListener('contextmenu', event => event.preventDefault())</script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./toolbar.css">
 
     <style>
         #debug {
@@ -20,11 +20,12 @@
             image-rendering: pixelated;
             font-family: Courier;
             overflow-x: hidden;
+            margin: 0;
         }
 
         .map-frame {
             width: calc(100% - 30px);
-            height: calc(100% - 35px);
+            height: calc(100% - calc(37px + var(--toolbar-height)));
 
             margin: 10px;
 
@@ -107,6 +108,15 @@
 </head>
 
 <body>
+    <div class="toolbar">
+        <a href="./map.html" active>
+            MAP
+        </a>
+        <a href="./quiz.html">
+            QUIZ
+        </a>
+    </div>
+
     <div id="castle-info" style="display: none;">
         <div class="close-btn" onclick="document.getElementById('castle-info').style.display = 'none'">
             <img src="./graphics/x.png">

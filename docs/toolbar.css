@@ -1,0 +1,28 @@
+:root {
+    --toolbar-height: 40px;
+}
+
+.toolbar {
+    top: 0;
+    width: 100%;
+    height: var(--toolbar-height);
+    border-bottom: 2px solid #f1ba59;
+    background-color: #fff0d9;
+}
+
+.toolbar>a {
+    height: 100%;
+    margin: 0px 20px;
+    display: inline-block;
+    line-height: 2.5;
+    cursor: pointer;
+    color: #000;
+}
+
+.toolbar>a:hover {
+    text-decoration: underline;
+}
+
+.toolbar>a:active, .toolbar>a[active] {
+    color: #996d20;
+}
