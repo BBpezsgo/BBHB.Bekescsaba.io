@@ -24,7 +24,7 @@
 
         .map-frame {
             width: calc(100% - 30px);
-            height: calc(100% - 30px);
+            height: calc(100% - 35px);
 
             margin: 10px;
 
@@ -35,11 +35,28 @@
             border-image-repeat: repeat;
         }
 
+        #debug-panel {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 50px;
+
+            background-image: url('./graphics/bg2.png');
+            background-size: 8px;
+            image-rendering: pixelated;
+
+            border: 2px solid #ffd182;
+
+            padding: 20px;
+
+            box-shadow: #420 0px 0px 16px;
+        }
+
         #castle-info {
             position: absolute;
             top: 0;
             left: 0;
-            margin: 20px;
+            margin: 50px;
 
             background-image: url('./graphics/bg2.png');
             background-size: 8px;
@@ -53,6 +70,8 @@
             min-width: 300px;
             max-height: 500px;
             overflow-y: auto;
+
+            box-shadow: #420 0px 0px 16px;
         }
 
         #castle-info > h1 {
@@ -103,14 +122,17 @@
     </div>
     <iframe src="./map.html" class="map-frame"></iframe>
 
-    <p id="debug">
+    <div id="debug-panel">
+        <p id="debug">
 
-    </p>
+        </p>
 
-    <input type="range" min="100" max="500" onchange="OnChange(event)">
+        <input type="range" min="100" max="500" value="100" onchange="OnChange(event)">
+    </div>
 
     <script>
         const castleInfo = document.getElementById('castle-info')
+        const mapIframe = document.getElementsByTagName('iframe')[0]
 
         var markers = []
         fetch('./map-markers.json')
@@ -138,7 +160,6 @@
         /** @param {Event} e */
         const OnChange = (e) => {
             const element = document.getElementsByTagName('input')[0]
-            const mapIframe = document.getElementsByTagName('iframe')[0]
             mapIframe.contentWindow.OnZoom(element.value / 100)
         }
     </script>

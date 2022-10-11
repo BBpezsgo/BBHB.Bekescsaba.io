@@ -64,7 +64,7 @@
     <script>
         const MapElement = document.getElementById('map')
         const container = document.getElementById('container')
-        var zoomAmmount = 2
+        var zoomAmmount = 1
 
         var clickedOnMap = true
 
@@ -201,6 +201,13 @@
             ele.scrollLeft = pos.left - dx
         }
 
+        const ViewportNormalizedPositionTopLeft = () => {
+            return {
+                x: ele.scrollLeft / ele.scrollWidth,
+                y: ele.scrollTop / ele.scrollHeight
+            }
+        }
+
         const mouseUpHandler = function () {
             ele.style.cursor = 'grab';
             ele.style.removeProperty('user-select');
@@ -214,26 +221,10 @@
         // document.getElementById('mapimage').ondragstart = function () { return false; }
     
         window.OnZoom = (value) => {
-            var lastZoomAmmount = zoomAmmount
             zoomAmmount = value
-            var zoomDifference = lastZoomAmmount - zoomAmmount
-
-            const viewportPosition = {
-                x: ele.scrollLeft / mapSize.width,
-                y: ele.scrollTop / mapSize.height
-            }
-
-            const sizedMapSize = {
-                width: mapSize.width * zoomAmmount,
-                height: mapSize.height * zoomAmmount
-            }
-
-            viewportPosition.x *= sizedMapSize.width
-            viewportPosition.y *= sizedMapSize.height
-
-            ele.scrollTop = viewportPosition.y
-            ele.scrollLeft = viewportPosition.x
-
+            const scrollPos = ViewportNormalizedPositionTopLeft()
+            ele.scrollLeft = mapSize.width * scrollPos.x * value
+            ele.scrollTop = mapSize.height * scrollPos.y * value
             Update()
         }
     </script>
