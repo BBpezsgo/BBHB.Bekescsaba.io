@@ -23,160 +23,160 @@
             "answers": {
                 "a": "Beliczay-kastély",
                 "b": "Hunyadi kastély",
-                "c": "Sarkadi Almásy kastély",
+                "c": "Sarkadi Almásy kastély"
             },
             "correctAnswer": "a"
-        }
+        },
         {
             "question": "4:Melyik kastély egykori puszta faluja csatlakozott dobozhoz községhez?",
             "answers": {
                 "a": "Hunyadi kastély",
                 "b": "Bolza-kastély",
-                "c": "Széchényi-Wenckheim kastélyrom",
+                "c": "Széchényi-Wenckheim kastélyrom"
             },
             "correctAnswer": "c"
-        }
+        },
         {
             "question": "5:Kondoros önkormányzata mikor kezdte meg a felvásárlását a Batthyány-Geist kastélynak?",
             "answers": {
                 "a": "2001",
                 "b": "1993",
-                "c": "1988",
+                "c": "1988"
             },
             "correctAnswer": "b"
-        }
+        },
         {
             "question": "6:Melyik megye alispánja építtetett kastélyt az anyósa tiszteletére?",
             "answers": {
                 "a": "Hajdú-Bihar",
                 "b": "Csongrád-Csanád megye",
-                "c": "Békés megye",
+                "c": "Békés megye"
             },
             "correctAnswer": "c"
-        }
+        },
         {
             "question": "7:Kárász kastély egyik szárnyán milyen apropón volt üvegtető?",
             "answers": {
                 "a": "mert akkoriban ez egy státusz szimbolum volt",
                 "b": "csillagászati célok miatt",
-                "c": "hogy kilássanak",
+                "c": "hogy kilássanak"
             },
             "correctAnswer": "b"
-        }
+        },
         {
             "question": "8:Melyik kastélyunk helyezkedik el a Orosházi kiscsákó területén?",
             "answers": {
                 "a": "Léderer kastély",
                 "b": "Geist-kastély(Geist-Reckmann-kastély)",
-                "c": "Telbisz kastély",
+                "c": "Telbisz kastély"
             },
             "correctAnswer": "b"
-        }  
+        },
         {
             "question": "9:Melyik kastélynak van híres alagút rendszere, amit alkalmazni is kellett?",
             "answers": {
                 "a": "Kárász  kastély",
                 "b": "Vásárhelyi-Bréda-kastély",
-                "c": "Hunyadi kastély",
+                "c": "Hunyadi kastély"
             },
             "correctAnswer": "c"
-        }
+        },
         {
             "question": "10:Melyik kastélyt használták katonai korháznak és éteremnek is?",
             "answers": {
                 "a": "Gyulai Almássy kastély",
                 "b": "Batthyány-Geist Kastély",
-                "c": "Léderer-Kastély",
+                "c": "Léderer-Kastély"
             },
             "correctAnswer": "c"
-        }  
+        },
         {
             "question": "11:Hány darab Wenckheim kastély található a megyénkben?",
             "answers": {
                 "a": "2",
                 "b": "5",
-                "c": "6",
+                "c": "6"
             },
             "correctAnswer": "b"
-        }
+        },
         {
             "question": "12:Melyik kastély kápolnájának mennyezetén volt található angyalokat ábrázoló freskó?",
             "answers": {
                 "a": "Almásy kastély",
                 "b": "Gyulavári kastély",
-                "c": "Fried-kastély",
+                "c": "Fried-kastély"
             },
             "correctAnswer": "b"
-        }
+        },
         {
             "question": "13:Melyik kastély volt régen a mai Medgyesegyházái idősek otthona?",
             "answers": {
                 "a": "Telbisz-kastély",
                 "b": "Bolza-kastély",
-                "c": "Wenckheim-kastély",
+                "c": "Wenckheim-kastély"
             },
             "correctAnswer": "a"
-        }
+        },
         {
             "question": "14:Melyik költő töltött huzamosabb időt a Szlávy-Schwarcz kastélyban?",
             "answers": {
                 "a": "József Atilla",
                 "b": "Kiss József",
-                "c": "Petőfi István",
+                "c": "Petőfi István"
             },
             "correctAnswer": "b"
-        }
+        },
         {
             "question": "15:Milyen stílusban épült a Wenckheim-Fejérváry-kastély?",
             "answers": {
                 "a": "Ókori egyiptomi",
                 "b": "Ókori egyiptomi",
-                "c": "Copf-empire",
+                "c": "Copf-empire"
             },
             "correctAnswer": "c"
-        }
+        },
         {
             "question": "16:Mi tartozott a Wenckheim-Fejérváry-kastély?",
             "answers": {
                 "a": "uszoda",
                 "b": "iskola",
-                "c": "üvegház",
+                "c": "üvegház"
             },
             "correctAnswer": "c"
-        }
+        },
         {
             "question": "17:Kinek a fia volt Ursznyi Dezső?",
             "answers": {
                 "a": "Ursznyi Andor",
                 "b": "Ursznyi János",
-                "c": "Ursznyi Antal",
+                "c": "Ursznyi Antal"
             },
             "correctAnswer": "a"
-        }
+        },
         {
             "question": "18:Milyen jelleggel bírt Wenckheim Rudolf  volt kastélya?",
             "answers": {
                 "a": "Barok",
                 "b": "Vadász",
-                "c": "Kuria",
+                "c": "Kuria"
             },
             "correctAnswer": "b"
-        }
+        },
         {
             "question": "19:Melyik kastélyunk a Maros Nemzeti Park Igazgatóság székhelye?",
             "answers": {
                 "a": "Kárász kastély",
                 "b": "Tisza kastély",
-                "c": "Csáky kastély",
+                "c": "Csáky kastély"
             },
             "correctAnswer": "c"
-        }
+        },
         {
             "question": "20:A Tisza kastély melyik tulaja hagyta el az országot és ment amerikába?",
             "answers": {
                 "a": "Tisza István",
                 "b": "Kálmán Lajos",
-                "c": "Tisza Lajos",
+                "c": "Tisza Lajos"
             },
             "correctAnswer": "b"
         }
