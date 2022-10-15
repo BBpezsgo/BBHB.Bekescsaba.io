@@ -138,6 +138,12 @@
                 /** @type {{x: number, y: number}} */
                 const markerPosition = { x: marker.x, y: marker.y }
 
+                if (marker.data.description == undefined) {
+                    console.warn(`Castle "${marker.data.name}" does not have description`)
+                } else if (marker.data.description.length == 0) {
+                    console.warn(`Castle "${marker.data.name}" does not have description`)
+                }
+
                 markerPosition.x -= topLeft.lat
                 markerPosition.y -= topLeft.lon
                 

@@ -82,12 +82,14 @@
         #castle-info > img {
             border: 2px solid #ffd182;
             width: 100%;
+            max-width: 400px;
         }
 
         #castle-info > p {
             width: min-content;
             min-width: calc(100% - 1em);
             box-sizing: border-box;
+            margin: 10px 0px;
         }
 
         .close-btn {
@@ -159,12 +161,23 @@
              * x: number,
              * y: number,
              * data: {
-             *  name: string
+             *  name: string,
+             *  description: string[]
              * }
              * }} */
             const castle = markers[e.substring(11)]
             castleInfo.style.display = 'block'
             castleInfo.getElementsByTagName('h1')[0].innerText = castle.data.name
+            const descs = castleInfo.getElementsByTagName('p')
+            while (descs.length > 0) {
+                descs[0].parentNode.removeChild(descs[0])
+            }
+            for (let i = 0; i < castle.data.description.length; i++) {
+                const desc = castle.data.description[i]
+                const newNode = document.createElement('p')
+                newNode.innerText = desc
+                castleInfo.appendChild(newNode)
+            }
         }
 
         /** @param {Event} e */
