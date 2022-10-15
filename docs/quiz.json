@@ -1,0 +1,32 @@
+{
+    "questionz": [
+        {
+            "question": "Question 1",
+            "answers": {
+                "a": "A",
+                "b": "B",
+                "c": "C (correct)"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "Question 2",
+            "answers": {
+                "a": "A",
+                "b": "B",
+                "c": "C (correct)"
+            },
+            "correctAnswer": "c"
+        },
+        {
+            "question": "Question 3",
+            "answers": {
+                "a": "A",
+                "b": "B",
+                "c": "C",
+                "d": "D (correct)"
+            },
+            "correctAnswer": "d"
+        }
+    ]
+}

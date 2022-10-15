@@ -90,36 +90,16 @@
         const quizContainer = document.getElementById('quiz')
         const resultsContainer = document.getElementById('results')
 
-        const questionz = [
-            {
-                question: "Question 1",
-                answers: {
-                    a: "A",
-                    b: "B",
-                    c: "C (correct)"
-                },
-                correctAnswer: "c"
-            },
-            {
-                question: "Question 2",
-                answers: {
-                    a: "A",
-                    b: "B",
-                    c: "C (correct)"
-                },
-                correctAnswer: "c"
-            },
-            {
-                question: "Question 3",
-                answers: {
-                    a: "A",
-                    b: "B",
-                    c: "C",
-                    d: "D (correct)"
-                },
-                correctAnswer: "d"
-            }
-        ]
+        var questionz = []
+
+        fetch('./quiz.json')
+        .then((response) => {
+            response.json()
+            .then((json) => {
+                questionz = json.questionz
+                buildQuiz()
+            })
+        })
 
         function showResults() {
             const answerContainers = quizContainer.querySelectorAll('.answers')
@@ -175,8 +155,6 @@
 
             quizContainer.innerHTML = output.join('')
         }
-
-        buildQuiz()
     </script>
 
 </body>
