@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./button.css">
+
+    <style>
+        #debug {
+            background-color: #222;
+            color: #ddd;
+            padding: 5px;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        body {
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .map-frame {
+            width: calc(100% - 30px);
+            height: 400px;
+
+            margin: 10px;
+
+            border-width: 7px;
+            border-image-source: url('./graphics/border.png');
+            border-image-width: 9px;
+            border-image-slice: 4;
+            border-image-repeat: repeat;
+        }
+
+        #castle-info {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 50px;
+
+            background-image: url('./graphics/brick.png');
+            background-size: 32px;
+
+            border: 2px solid #777;
+
+            padding: 20px;
+
+            min-width: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+
+            color: #fff;
+
+            box-shadow: #000 0px 0px 16px, inset #000a 0px 0px 100px 300px;
+        }
+
+        #castle-info > h1 {
+            font-size: 24px;
+        }
+
+        #castle-info > img {
+            border: 2px solid #777;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #castle-info > p {
+            width: min-content;
+            min-width: calc(100% - 1em);
+            box-sizing: border-box;
+            margin: 10px 0px;
+            color: white;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        .close-btn {
+            float: right;
+            cursor: pointer;
+        }
+
+        .close-btn > img {
+            width: 32px;
+            height: 32px;
+            pointer-events: none;
+        }
+
+        .close-btn:hover > img {
+            filter: drop-shadow(0px 0px 4px #b33c3c);
+        }
+
+        .container {
+            background-color: #555;
+            color: #fff;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            border: #666 1px solid;
+            box-shadow: #000 0px 0px 20px;
+        }
+
+        #castle-list {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 100%;
+            height: 200px;
+            white-space: nowrap;
+        }
+
+        #castle-list > div {
+            display: inline-block;
+            margin: 10px;
+            border-radius: 2px;
+            height: 150px;
+            background-color: #0002;
+            border: 1px solid #333;
+        }
+
+        #castle-list div.content h1 {
+            font-size: large;
+        }
+
+        #castle-list > div > div.bg {
+            position: static;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            filter: blur(2px) brightness(50%);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #castle-list div.content {
+            transform: translateY(-130px);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="castle-info" style="display: none;">
+            <div class="close-btn" onclick="document.getElementById('castle-info').style.display = 'none'">
+                <img src="./graphics/x.png">
+            </div>
+    
+            <h1>KASTÉLY NEVE</h1>
+    
+            <img src="https://i.pinimg.com/originals/41/a2/a5/41a2a560f6af4ea3e04b487ad9710e2c.jpg">
+    
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo id sem commodo finibus. Donec eu felis ac velit rutrum efficitur in et odio. Curabitur id leo suscipit turpis volutpat ultrices. Vivamus sit amet lacus purus. Cras tincidunt pulvinar nisl. Vestibulum hendrerit ligula libero, ut feugiat velit eleifend nec. Proin quam dui, consectetur ut orci quis, porttitor porta ante. Maecenas ac lobortis nibh. Maecenas et leo a sapien placerat viverra nec id velit. Sed in dolor egestas, porta ex quis, hendrerit lacus. In hac habitasse platea dictumst. Aenean ac pharetra lacus. Maecenas ac porttitor risus.
+            </p>
+        </div>
+
+        <h1>Békés-megye Kastélyai</h1>
+
+        <iframe src="./map-iframe.html" class="map-frame"></iframe>
+    
+        <div id="debug-panel">
+            <p id="debug">
+    
+            </p>
+        </div>
+
+        <div id="castle-list">
+
+        </div>
+    
+        <script>
+            const castleInfo = document.getElementById('castle-info')
+            const mapIframe = document.getElementsByTagName('iframe')[0]
+            const castleList = document.getElementById('castle-list')
+    
+            var markers = []
+            fetch('./map-markers.json')
+            .then((response) => {
+                response.json()
+                .then((json) => {
+                    markers = json.markers
+                    const oldElements = castleList.getElementsByTagName('div')
+                    while (oldElements.length > 0) {
+                        oldElements[0].parentNode.removeChild(oldElements[0])
+                    }
+                    for (let i = 0; i < markers.length; i++) {
+                        const castle = markers[i].data
+                        const newElement = document.createElement('div')
+
+                        const bg = document.createElement('div')
+                        bg.style.backgroundImage = `url('${castle.image}')`
+                        bg.className = 'bg'
+                        newElement.appendChild(bg)
+
+                        const content = document.createElement('div')
+                        content.className = 'content'
+                        newElement.appendChild(content)
+
+                        const title = document.createElement('h1')
+                        title.innerText = castle.name
+                        content.appendChild(title)
+
+                        const button = document.createElement('button')
+                        button.innerText = 'Részletek'
+                        button.addEventListener('click', (ev) => {
+                            ShowCastleInfo(i)
+                        })
+                        button.className = 'button'
+                        content.appendChild(button)
+
+                        castleList.appendChild(newElement)
+                    }
+                })
+            })
+    
+            window.OnMarkerClicked = (e) => {
+                ShowCastleInfo(e.substring(11))
+            }
+
+            const ShowCastleInfo = (i) => {
+                /** @type {{
+                 *  name: string,
+                 *  description: string[]
+                 * }} */
+                const castle = markers[i].data
+                castleInfo.style.display = 'block'
+                castleInfo.getElementsByTagName('h1')[0].innerText = castle.name
+                castleInfo.getElementsByTagName('img')[1].src = castle.image
+                const descs = castleInfo.getElementsByTagName('p')
+                while (descs.length > 0) {
+                    descs[0].parentNode.removeChild(descs[0])
+                }
+                for (let i = 0; i < castle.description.length; i++) {
+                    const desc = castle.description[i]
+                    const newNode = document.createElement('p')
+                    newNode.innerText = desc
+                    castleInfo.appendChild(newNode)
+                }
+            }
+        </script>
+    </div>
+
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+        <p>Footer</p>
+    </div>
+
+    <style>
+        body::before {
+            content: "";
+            background-image: url('./graphics/sky-low.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: fixed;
+            z-index: -1;
+            background-position: center;
+        }
+    </style>
+
+</body>
+
+</html>

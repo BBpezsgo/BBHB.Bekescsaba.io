@@ -1,0 +1,17 @@
+.button {
+    border: 0;
+    outline: 0;
+    background-image: linear-gradient(#777, #666);
+    color: #000;
+    padding: 5px 20px;
+    transition: background-image 150ms;
+    border-radius: 2px;
+}
+
+.button:hover {
+    background-image: linear-gradient(#999, #777);
+}
+
+.button:active {
+    background-image: linear-gradient(#666, #555);
+}
