@@ -1,19 +1,19 @@
 .button {
-    border: 0;
-    outline: 0;
-    background-image: linear-gradient(#777, #666);
+    background-image: linear-gradient(#19bd99, #149987);
     color: #000;
     padding: 5px 20px;
     transition: background-image 150ms;
     border-radius: 2px;
     text-decoration: none;
+    border: 2px solid #2fceb9;
 }
 
 .button:hover {
-    background-image: linear-gradient(#999, #777);
+    background-image: linear-gradient(#2eebc2, #19d8af);
     color: #000;
 }
 
 .button:active {
-    background-image: linear-gradient(#666, #555);
+    background-image: linear-gradient(#149987, #0f8677);
+    border: 2px solid #19bd99;
 }

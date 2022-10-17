@@ -96,9 +96,6 @@
             color: #fff;
             margin-top: 20px;
             padding: 20px;
-            border-radius: 5px;
-            border: #666 1px solid;
-            box-shadow: #000 0px 0px 20px;
         }
 
         #castle-list {
@@ -137,6 +134,11 @@
         #castle-list div.content {
             transform: translateY(-130px);
             padding: 10px;
+        }
+
+        .container {
+            --slice-ammount: 10px;
+            background: linear-gradient(45deg, transparent 0px, #555 calc(100% - var(--slice-ammount)), transparent calc(100% - var(--slice-ammount))), linear-gradient(45deg, transparent var(--slice-ammount), #555 var(--slice-ammount), transparent 100%), url(http://lorempixel.com/100/100);
         }
     </style>
 </head>
