@@ -186,6 +186,17 @@
             "y": 21.284947270789022,
             "data": {
                 "name": "Gyulai Almásy-kastély",
+                "description": [
+                    "Harruckern János György 1723-ban kapta meg a gyulai uradalmat. A kastély építése már 1745 előtt kezdetét vette, és egészen 1902-ig tartott, mire elérte teljes állapotát. ",
+
+                    "A kastély 1795-ben tűzvész áldozata lett, majd 1798-ban Wenckheim Józsefné az előző helyére felépíttette az új kastélyt, ami viszont 1801-ben ismét por és hamu romjaivá vált. ",
+                    
+                    "A kastély Wenckheim Stefánia Mária grófnő és gróf Almásy Kálmán házassága révén került az Almásy család birtokába. A nagyszabású átalakítások keretében a szárnyépületeket plusz egy emelettel kiegészítették ",
+                    
+                    "Almásy Kálmán ideje alatt a kastély minden alkalmazottja a korhoz képest igen jó ellátásban részesült. A gróf híresen humánus ember volt: a betegeket gyógyíttatta, az öregeket istápolta, az egyházat támogatta, embertársait megbecsülte. Az embereket nem a rangjuk alapján ítélte meg, hanem belső értékük szerint. ",
+                    
+                   " Ez az első magyarországi kastély, amelyben már 1746-ban színdarabot mutattak be. Himnuszunk zeneszerzőjének nagyapja kulturális udvarmesterként élt a falai között – s maga Erkel Ferenc is gyakran megfordult itt. "
+                ],
                 "image": "https://csodalatosmagyarorszag.hu/wp-content/uploads/2021/03/gyula-almasy-kastely-stefania-szarny-latogatokozpont-csodalatosmagyarorszag-1536x864.jpg"
             }
         },
@@ -217,9 +228,98 @@
             "y": 20.867691409413087,
             "data": {
                 "name": "Babó-kastély",
+                "description": [
+                    "A Babó egy Nyitra megyei család, birtokadományt 1652-ben kapott Vágvecsére. Az 1754/55 évi országos nemesi összeíráskor Nyitra megyében találjuk Ferenczet és Istvánt. A család utóbb Arad megyében is kihirdette nemességét. Babó Lajos (1854-1920) volt országgyűlési képviselő, atyja Babó Imre szolgabíró volt. A jog elvesztése után Arad táblabíróság aljegyzője, majd a kovácsházi járás főszolgabírója lett. ",
+
+                    "A II. világháború után a helyi MGTSZ tulajdonába került a major. A ’70-es évek idején lovasmajorként működött, több mint 100 lóval. A ’80-as években az MGTSZ felszámolta a teljes lóállományt, így major üresen állt, mintegy 10 évig, mely idő alatt jelentősen lepusztult. A 2000. évben Oláh Tibor és családja vásárolta fel a komplexumot, majd megindult fokozatos restauráció, hogy a Babó Major újra visszakapja régi szépségét. A felújítás keretei között került sor a több, mint 100 éves kastély épületének teljes helyreállítására is. Két teljes év alatt sikerült visszaállítani a patinás épület régi fényét, amely azóta szálláshelyként szolgálja az ide látogatók kényelmét. "
+                ],
                 "image": "https://babokastely.hu/wp-content/uploads/2019/08/IMG_2526.jpg"
             }
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "data": {
+                "name": "Sarkadi Almásy kastély ",
+                "description": [
+                    "Az 1829-ben épült klasszicista kúria építését, Almásy Ignác rendelte el. Kápolnát is kialakítottak az épületben, valamint vadasparkot is létrehozattak a településen az Almásyak.",
+                    "Az 1848-49-es szabadságharc alatt itt szállt meg Nagysándor József, Knézich Jenő és lovag Poeltenberg Ernő honvéd tábornokok, később aradi vértanúk is. Az épület szabadon álló, földszintes, megközelítően téglalap alaprajzú. A kúria egyenes záródású ablakai kereteltek, alattuk könyöklőpárkány és - a főhomlokzaton - táblás köténydísz látható. A kúria sarkait több helyen lizéna díszíti, az épületen főpárkány fut körül. A kocsialáhajtó alatt nyíló keretelt ajtó felett félköríves fölülvilágítót alakítottak ki, az ajtó két oldalán lévő ablakok alatt",
+                    "könyöklőpárkány és vakolattükrüs köténydísz, felettük egyenes szemöldökpárkány látható. 1917-től a grófi család már csak a kúria egyik részét használta, másik részét bérbe adta a Magyar Föld Rt.-nek, amely a sarkadi Almásy-birtokok bérlője volt. Napjainkban az Ady Endre-Bay Zoltán Középiskola és Kollégium könyvtára található az épületben, valamint helyet kapott az Ady-gyűjtemény, iskolatörténeti- és postatörténeti-kiálíítás is. "
+                ],
+                "image": ""
+            }
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "data": {
+                "name": "SZLÁVY-SCHWARCZ KASTÉLY",
+                "description": [
+                    "A Szlávy család kastélyt is építtetett a falu határában, melyet a község későbbi nagybirtokosa az Okányi-Schwarcz család szerzett meg. Petőfi Sándor több alkalommal is átutazott a falun. Kiss József költő huzamosabb időt töltött a településen vándortanítóként. Schwarcz József kastélyából 1950-ben kezdték kialakítani a Szociális Otthont. Az épület bővítések és felújítások után is megtartotta, őrzi eredeti formájának legfőbb vonalait. A második világháború utáni évektől szociális gondozó intézményként és jelenleg is a Hajnal István Szociális Intézmény részeként működik. "
+                ],
+                "image": ""
+            }
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "data": {
+                "name": "Wenckheim-Fejérváry-kastély ",
+                "description": [
+                    "A Wenckheim család uradalmi kastélya az 1800-as évek elején épült copf-empire stílusban. A Wenckheim kastélyban néhány évig leánynevelő intézet működött, amit Festetich Vincéné vezetett. 1838-40 között Szendrey Júlia is az intézet tanulója volt. Petőfi Sándor is sok szállal kötődött Berényhez. Baráti és rokoni szálak fűzték Orlai Petrics Somához, a magyar történelmi festészet jeles alakjához. Az egyemeletes épülethez nagy park tartozott, üvegházzal. A második világháborúban a bal szárnya és a portikusza elpusztult. Az eredetileg könyvtárnak és múzeumnak szánt épületben jelenleg az Orlai Petrics Soma Múzeális Gyűjtemény tekinthető meg. Ma iskola és könyvtár. A kastély 5 hektáros parkjának hátsó része városligetként maradt fenn, értékes kertépítészeti részletekkel és fából épített nyári pavilonnal. 2007-ben felújították a teljes tetőszerkezetét. "
+                ],
+                "image": ""
+            }
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "data": {
+                "name": "Urszinyi-Beliczey kúria ",
+                "description": [
+                    "Klasszicista stílusú kúriát a szepsi Ursziny család emeltette, nagyjából egyidőben a Steiner-kúriával. A családtagok közül elsőként Ursziny Andor költözött Békés vármegyébe, 1840 után már Csabán lakott, ahol ügyvédi irodát nyitott, és grófi uradalmaknak, így a Stockhammer uradalomnak is ügyésze lett 1845-ig. 1845-ben a vármegye táblabírájává, 1849-ben Csaba mezőváros főbírájává választották. 1861-ben Békés vármegye másodalispánjává választották, de az 1860-ban megalakult Békésmegyei Gazdasági Egyletnek is elnöke volt 1861-1870 között. A kúriának minden bizonnyal ő volt az építtetője, az építkezésre nagy valószínűséggel 1847-1849 között, vagy 1850-ben kerülhetett sor. Ez volt az egyik legszebb ház az Élővíz-csatornán túl. ",
+
+                    "Ursziny Andor fia volt Ursziny Dezső miniszteri osztálytanácsos, földbirtokos, törvényhatósági bizottsági és képviselő-testületi tag, aki megörökölte a házat, de nevéhez köthető egy másik építmény is. Ez pedig a mai Békés Megyei Könyvtárnak az Élővíz-csatorna partja mentén fekvő, eklektikus stílusú épületrésze. Ez egy szabadon álló, egyszintes polgári lakóháznak épült 1898-ban Wagner József építőmester tervei szerint az egykori városi főjegyzőnek, Szemián Sámuel lakóházának helyén. Az 1900-as évek első évtizedében kerülhetett át a Gyulai úti kúria a Nyitra vármegyei Beliczey család kezébe. Elsőként Beliczey Mihály költözött Békés vármegyébe, aki 1740-ben már uradalmi ispánként működött. A család 1870 körül Csabaszabadiban emelt, historizáló stílusú kiskastélya ma is megtalálható, de magántulajdonban van és erősen lepusztult állapotban, nem látogatható. "
+                ],
+                "image": ""
+            }
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "data": {
+                "name": "Wenckheim Rudolf egykori kastélya",
+                "description": [
+                    "A kastély felújítása során igyekeztek az eredeti állapothoz közelíteni, természetesen a kor követelményeinek figyelembe vételével. A felújítás során igyekeztünk az eredeti állapothoz közelíteni, természetesen a kor követelményeinek figyelembe vételével. Így eredeti pompájában fénylik a szalon, valamint a vendégszoba. Színeiben is tükrözi a múlt század eleji hangulatot a külső homlokzat. Az egy emeletes épület falai feltűnően vastagok, szinte várfal jelleggel bírnak. A főbejárat eredeti kovácsoltvas kapu, a két kőoszlopfővel még ma is megvan.  A csorvási nagy Wenckheim birtok három legnagyobb kastélya közül egyedül a Rudolf kastély áll és még funkcionál, mint szálláshely, ebédlő és mezőgazdasági egység (egykori Tsz üzemegység) központjaként. ",
+                    
+                    "Gróf Wenckheim Rudolf kastélya inkább vadászkastély jelleggel bírt, nem állandó lakhelyül. Az egy emeletes épület falai feltűnően vastagok, szinte várfal jelleggel bírnak. A főbejárati eredeti kovácsoltvas kapu a két kőoszlopfővel még ma is megvan. A kastélyhoz vezető 3km-es út több mint 100 db erdei és lucfenyő fáit kidarabolták a háború után. A park 3,7 ha-ra „összezsugorodott”, de még így is a benne lévő megmaradt fák (tölgy, juhar, piros virágú vadgesztenye, papíreper) az egykori gazdagságot sejtetik. "
+                ],
+                "image": ""
+            }
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "data": {
+                "name": "Csáky-kastély ",
+                "description": [
+                    "A kastély és az azt körülvevő liget története szorosan összekapcsolódik. A fáskert telepítését gróf Bolza József (1780-1862) és felesége, Batthyány Anna kezdte meg az 1800-as évek elején. Az 1801-1811. évi külterületi térkép e területen egy egyszerű nyaralónak tekinthető épületet tüntet fel, melyet valószínűleg a fennt nevezettek építtettek. A mai kastély létrehozása Csáky Albin (1841-1912) közoktatási miniszter és Szarvas város országgyűlési képviselője, és felesége Bolza Anna (Bolza József unokája) nevéhez fűződik. A kastély 1908-ban épült klasszicista jellegű késő barokk stílusban. Az épület tervezője és építője Bányász János neves szarvasi építőmester volt. A kastély az 1994. május 22-én megalakult Körös - Maros Vidéki Természetvédelmi Igazgatóság, jelenleg 1997. január 16. óta a Körös - Maros Nemzeti Park Igazgatóság székhelye. A kastélyt az igazgatóság helyreállította és felújította, az elvadult parkot rendbe tette. Az épület a parkkal együtt állami tulajdonban, és a KMNP kezelésében van. Az épület 1994. óta műemlék, és parkja 1989. óta helyi jelentőségű természetvédelmi terület. Az Anna - liget a tervezett természetismereti tanösvény kialakításával, látogatóközpont létrehozásával jelentős ökoturisztikai vonzerő lehet. A kastély és a liget csoportok számára előzetes bejelentkezéssel, egyébként szabadon látogatható.   "
+                ],
+                "image": "https://www.kastelyok.com/images/128/128_1.jpg"
+            }
+        },
+        {
+            "x": 0,
+            "y": 0,
+            "data": {
+                "name": "Tisza-kastély ",
+                "description": [
+                    "1772-ben épült fel a Tisza család geszti birtokán az a barokk stílusban épült kúria, amely később a kialakításra került kastély magját alkotta. Az épület már a XVIII. század végén is L alaprajzú volt, mindkét szárny alatt pince nyugodott. A század végére készült el a kastély fő szárnyának középső traktusa, a kocsiáthajtó fölé épített négytengelyes, klasszicizáló késő barokk stílusú pavilon. Az első birtokos beköltözése után került kiépítésre az angolkert. A 15 hektáros kertet a XIX. század elején alakították ki egy kisebb erdőrészből. Az egykor locsolóhálózattal is ellátott terület napjainkban már csak 5,4 hektárt tesz ki. Tisza Kálmán 1856-ban került a geszti uradalom élére. Birtokossága ideje alatt az addig földszintes épületre egy emeletet húztak fel, és ekkor kerültek kialakításra többek között a miniszterelnök dolgozószobája, a Nagy- és Kisszalon, illetve a grófnő dolgozó szobája, továbbá a kastély keleti szárnyának külső terasza is ekkor épült. A kastély 1902-ben lett Tisza Istváné, aki további átalakításokat végeztetett az épületen. Ekkor került sor az elektromos áram bevezetésére, a telefonvonal bekötésére, valamint a padlástérben egy új hideg-meleg vizes tartályt helyeztek el. Tisza István fia, Kálmán-Lajos birtokossága idején korszerűsítették a nyílászárókat. A második világháború után, a kastély teljes berendezése megsemmisült, Kálmán-Lajos pedig az Egyesült Államokba költözött. Az államszocializmus idején az épület egy iskolának és művelődésháznak, később könyvtárnak adott otthont. A kastélyban otthont adó, a család történetét bemutató kiállítás számos attrakcióval várja a látogatókat. A XXI. század technológiáját felhasználva megismerhetjük a Tisza családot, Tisza Kálmán és Tisza István miniszterelnökök pályáját, a Tiszák és a református egyház kapcsolatát, valamint betekintést nyerhetünk többek között a korabeli kastély mindennapjaiba. "
+                ],
+                "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Tisza-kast%C3%A9ly_Geszt_%28M%C3%A9sz%C3%B6ly_G%C3%A9za%29.jpg"
+            }
         }
+
     ],
     "top-left": {
         "lat": 47.238569,
