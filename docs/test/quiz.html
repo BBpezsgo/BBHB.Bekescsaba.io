@@ -150,7 +150,6 @@
     <style>
         body::before {
             content: "";
-            background-image: url('./graphics/sky-low.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             top: 0;
@@ -160,9 +159,12 @@
             position: fixed;
             z-index: -1;
             background-position: center;
+            transition: background 2s ease-in-out;
         }
     </style>
 
+    <style id="bgStyle">body::before {background-image:url('./graphics/sky-low.jpg')}</style>
+    <script src="./background.js"></script>
 </body>
 
 </html>

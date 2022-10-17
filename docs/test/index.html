@@ -263,40 +263,12 @@
             position: fixed;
             z-index: -1;
             background-position: center;
-            transition: background 1s ease-in-out;
+            transition: background 2s ease-in-out;
         }
     </style>
 
-    <style id="bgStyle">
-        body::before {
-            background-image: url('./graphics/sky-low.jpg');
-        }
-    </style>
-
-    <script>
-        fetch('./background-images.json')
-        .then(async (res) => {
-            const bgs = await res.json()
-            
-            var images = []
-            function preload() {
-                for (var i = 0; i < arguments.length; i++) {
-                    images[i] = new Image()
-                    images[i].src = preload.arguments[i]
-                }
-            }
-            preload(bgs)
-
-            var bgI = 0
-            const bgStyle = document.getElementById('bgStyle')
-            setInterval(() => {
-                bgStyle.innerHTML = `body::before {background-image: url('${bgs[bgI]}');}`
-                bgI++
-                if (bgI >= bgs.length)
-                { bgI = 0 }
-            }, 2000)
-        })
-    </script>
+    <style id="bgStyle">body::before {background-image:url('./graphics/sky-low.jpg')}</style>
+    <script src="./background.js"></script>
 </body>
 
 </html>
