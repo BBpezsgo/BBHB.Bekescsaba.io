@@ -6,10 +6,12 @@
     padding: 5px 20px;
     transition: background-image 150ms;
     border-radius: 2px;
+    text-decoration: none;
 }
 
 .button:hover {
     background-image: linear-gradient(#999, #777);
+    color: #000;
 }
 
 .button:active {
