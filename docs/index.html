@@ -1,171 +1,149 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 
 <head>
-    <script>window.location = './test/index.html'</script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./button.css">
+    <link rel="stylesheet" href="./castle-list.css">
+    <link rel="stylesheet" href="./castle-info.css">
+    <link rel="stylesheet" href="./container.css">
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./background.css">
 
-    <title>Békés megye Kastélyai</title>
+    <style>
+        #debug {
+            background-color: #222;
+            color: #ddd;
+            padding: 5px;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        body {
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .map-frame {
+            width: calc(100% - 30px);
+            height: 400px;
+            margin: 10px;
+            box-shadow: #000a 3px 3px 3px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="">Békés megye kastélyai</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container">
+        <div id="castle-info" style="display: none;">
+            <div class="close-btn" onclick="document.getElementById('castle-info').style.display = 'none'">
+                <img src="./images/x.png">
+            </div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">fő <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="route.html">Útvonalterv</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Kastélyok
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.html">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
-            </form>
-        </div>
-    </nav>
+            <h1>KASTÉLY NEVE</h1>
+    
+            <img src="https://i.pinimg.com/originals/41/a2/a5/41a2a560f6af4ea3e04b487ad9710e2c.jpg">
 
-    <div class="row">
-        <div class="col-3 ">
-            <div class="border">
-                <img src="" alt="">
-                <p>Beliczay-Kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Wenckheim-Kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Széchényi-Wenckheim kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Batthyány-Geist kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Gyulai Almásy-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis justo id sem commodo finibus. Donec eu felis ac velit rutrum efficitur in et odio. Curabitur id leo suscipit turpis volutpat ultrices. Vivamus sit amet lacus purus. Cras tincidunt pulvinar nisl. Vestibulum hendrerit ligula libero, ut feugiat velit eleifend nec. Proin quam dui, consectetur ut orci quis, porttitor porta ante. Maecenas ac lobortis nibh. Maecenas et leo a sapien placerat viverra nec id velit. Sed in dolor egestas, porta ex quis, hendrerit lacus. In hac habitasse platea dictumst. Aenean ac pharetra lacus. Maecenas ac porttitor risus.
+            </p>
         </div>
-        <div class="col-3 ">
-            <div class="border">
-                <img src="" alt="">
-                <p>Wenckheim-Merán-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Almásy-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Váserhelyi-Bréda-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Wenckheim-hoyos-Wenckheim vadászkastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Telbisz-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
+
+        <h1>Békés-megye Kastélyai</h1>
+
+        <iframe src="./map-iframe.html" class="map-frame"></iframe>
+    
+        <div id="debug-panel">
+            <p id="debug">
+    
+            </p>
         </div>
-        <div class="col-3 ">
-            <div class="border">
-                <img src="" alt="">
-                <p>Andrássy-Almásy kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Wenckheim-kastély és Zenepavilon</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Bolza-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Kárász-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Geist-kastély (Geist-Reckmann-kastély)</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
+
+        <div id="castle-list">
+
         </div>
-        <div class="col-3 ">
-            <div class="border">
-                <img src="" alt="">
-                <p>Hunyadi Kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Fried-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Gyulavári kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Léderer-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-            <div class="border">
-                <img src="" alt="">
-                <p>Babó-kastély</p>
-                <button type="button" class="btn btn-outline-success">Tudj meg többet</button>
-            </div>
-        </div>
+    
+        <script>
+            const castleInfo = document.getElementById('castle-info')
+            const mapIframe = document.getElementsByTagName('iframe')[0]
+            const castleList = document.getElementById('castle-list')
+    
+            var markers = []
+            fetch('./jsons/map-markers.json')
+            .then((response) => {
+                response.json()
+                .then((json) => {
+                    markers = json.markers
+                    const oldElements = castleList.getElementsByTagName('div')
+                    while (oldElements.length > 0) {
+                        oldElements[0].parentNode.removeChild(oldElements[0])
+                    }
+                    for (let i = 0; i < markers.length; i++) {
+                        const castle = markers[i].data
+                        const newElement = document.createElement('div')
+                        newElement.addEventListener('click', (e) => { ShowCastleInfo(i) })
+
+                        const bg = document.createElement('div')
+                        bg.style.backgroundImage = `url('${castle.image}')`
+                        bg.className = 'bg'
+                        newElement.appendChild(bg)
+
+                        const content = document.createElement('div')
+                        content.className = 'content'
+                        content.addEventListener('click', (e) => { ShowCastleInfo(i) })
+                        newElement.appendChild(content)
+
+                        const title = document.createElement('h1')
+                        title.innerText = castle.name
+                        title.addEventListener('click', (e) => { ShowCastleInfo(i) })
+                        content.appendChild(title)
+
+                        castleList.appendChild(newElement)
+                    }
+                })
+            })
+    
+            window.OnMarkerClicked = (e) => {
+                ShowCastleInfo(e.substring(11))
+            }
+
+            const ShowCastleInfo = (i) => {
+                /** @type {{
+                 *  name: string,
+                 *  description: string[]
+                 * }} */
+                const castle = markers[i].data
+                castleInfo.style.display = 'block'
+                castleInfo.getElementsByTagName('h1')[0].innerText = castle.name
+                castleInfo.getElementsByTagName('img')[1].src = castle.image
+                const descs = castleInfo.getElementsByTagName('p')
+                while (descs.length > 0) {
+                    descs[0].parentNode.removeChild(descs[0])
+                }
+                for (let i = 0; i < castle.description.length; i++) {
+                    const desc = castle.description[i]
+                    const newNode = document.createElement('p')
+                    newNode.innerText = desc
+                    castleInfo.appendChild(newNode)
+                }
+            }
+        </script>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous"></script>
-    <script src="analysis.js"></script>
-    <script>
-        Analyze()
-    </script>
+    <div class="container">
+        <a class="button" href="./quiz.html">Quiz! Teszteld tudásod!</a>
+    </div>
+
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+        <p>© Copyright 2022</p>
+    </div>
+
+    <style id="bgStyle">body::before {background-image:url('./images/sky-low.jpg')}</style>
+    <script src="./scripts/background.js"></script>
 </body>
 
 </html>

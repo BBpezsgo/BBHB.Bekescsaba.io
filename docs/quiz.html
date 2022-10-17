@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./toolbar.css">
+    <link rel="stylesheet" href="./button.css">
+    <link rel="stylesheet" href="./container.css">
+    <link rel="stylesheet" href="./background.css">
 
     <style>
         :root {
@@ -14,24 +16,20 @@
             --quiz-label-right: #4da811;
         }
 
-        body {
-            background-image: url('./graphics/bg.png');
-            background-size: 64px;
-            image-rendering: pixelated;
-            font-family: Courier;
-        }
-
         .quiz-panel,
         .final-panel {
-            background-image: url('./graphics/bg2.png');
-            background-size: 8px;
-            image-rendering: pixelated;
+            background-image: url('./images/brick2.png');
+            background-size: 32px;
 
-            border: 2px solid #ffd182;
+            border: 2px solid #777;
 
             margin: 20px;
             padding: 20px;
-        }
+
+            box-shadow: inset #000a 0px 0px 100px 300px;
+
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+       }
 
         .answers > label {
             display: block;
@@ -41,49 +39,40 @@
         .question {
             font-size: 24px;
             font-weight: 600;
+            user-select: none;
         }
 
-        button {
-            background-color: #fff3df;
-
-            border: 3px solid;
-            border-top-color: #ffe1ac;
-            border-left-color: #ffe1ac;
-            border-bottom-color: #ffd182;
-            border-right-color: #ffd182;
-        }
-
-        button:active {
-            background-color: #fff3df;
-            
-            border: 3px solid;
-            border-top-color: #ffd182;
-            border-left-color: #ffd182;
-            border-bottom-color: #ffe1ac;
-            border-right-color: #ffe1ac;
+        .answers > label {
+            user-select: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            line-height: 1.5;
         }
     </style>
 </head>
 
 <body>
-    <div class="toolbar">
-        <a href="./map.html">
-            MAP
-        </a>
-        <a href="./quiz.html" active>
-            QUIZ
-        </a>
-    </div>
-
     <div class="container">
 
         <div id="quiz"></div>
 
         <div class="final-panel">
-            <button id="submit" onclick="showResults()">Submit Quiz</button>
+            <button id="submit" class="button" onclick="showResults()">Submit Quiz</button>
             <div id="results"></div>
         </div>
 
+    </div>
+
+    <a class="button" href="./index.html" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    ">
+        Vissza a főoldalra
+    </a>
+
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+        <p>© Copyright 2022</p>
     </div>
 
     <script>
@@ -92,7 +81,7 @@
 
         var questionz = []
 
-        fetch('./quiz.json')
+        fetch('./jsons/quiz.json')
         .then((response) => {
             response.json()
             .then((json) => {
@@ -157,6 +146,8 @@
         }
     </script>
 
+    <style id="bgStyle">body::before {background-image:url('./images/sky-low.jpg')}</style>
+    <script src="./scripts/background.js"></script>
 </body>
 
 </html>

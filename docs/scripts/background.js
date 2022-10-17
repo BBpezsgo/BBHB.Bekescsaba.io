@@ -1,13 +1,15 @@
-fetch('./background-images.json')
+fetch('./jsons/background-images.json')
 .then(async (res) => {
+    const bgsRaw = await res.text()
     /** @type {string[]} */
-    const bgs = await res.json()
+    const bgs = JSON.parse(bgsRaw)
 
     var images = []
-    function preload() {
-        for (var i = 0; i < arguments.length; i++) {
+    /** @param {string[]} imageLinks */
+    function preload(imageLinks) {
+        for (var i = 0; i < imageLinks.length; i++) {
             images[i] = new Image()
-            images[i].src = preload.arguments[i]
+            images[i].src = imageLinks[i]
         }
     }
 

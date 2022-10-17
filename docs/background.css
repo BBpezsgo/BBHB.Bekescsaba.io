@@ -1,0 +1,15 @@
+body::before {
+    content: "";
+    background: linear-gradient(330deg, rgba(28, 93, 173, 1) 0%, rgba(194, 218, 243, 1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    z-index: -1;
+    background-position: center;
+    transition: background 2s ease-in-out;
+    filter: sepia(0.5);
+}

@@ -9,7 +9,9 @@
         body {
             margin: 0;
             overflow: hidden;
-            background-color: #eef0d5;
+            background-image: url('./graphics/map-bg.png');
+            background-size: 64px;
+            image-rendering: pixelated;
         }
 
         .marker {
@@ -19,6 +21,7 @@
             cursor: pointer;
             position: absolute;
             background-size: 100%;
+            image-rendering: pixelated;
             transform: translate(-50%, -100%);
             transition: transform 200ms;
         }
@@ -45,26 +48,6 @@
             transform: translate(6px, 2px) translateY(5px);
             filter: blur(1px);
         }
-
-        .marker > .marker-label {
-            display: inline-block;
-            transform: translate(-8px, -32px) scale(0%);
-            transition: transform 200ms, opacity 200ms;
-            border-radius: 0px 8px 8px 8px;
-            pointer-events: none;
-            padding: 4px;
-            z-index: 50;
-            font-weight: bold;
-            color: #fff;
-            box-shadow: #0006 2px 2px 2px;
-            background-color: #e91c23;
-            opacity: 0;
-        }
-
-        .marker:hover > .marker-label {
-            transform: translate(16px, -20px) scale(100%);
-            opacity: 1;
-        }
     </style>
 </head>
 
@@ -72,7 +55,7 @@
     <div style="
             width: 955px;
             height: 946px;
-            background-image: url(../map.png);
+            background-image: url(./map.png);
             background-size: contain;
             background-repeat: no-repeat;
         " id="map"></div>
@@ -106,7 +89,7 @@
             }, 1)
         }
 
-        fetch('../map-markers.json')
+        fetch('./map-markers.json')
         .then((response) => {
             response.json()
             .then((json) => {
@@ -150,6 +133,7 @@
             var idCounter = 0
             markers.forEach(marker => {
                 const node = document.createElement("div")
+                const nodeChild = document.createElement("div")
 
                 /** @type {{x: number, y: number}} */
                 const markerPosition = { x: marker.x, y: marker.y }
@@ -158,10 +142,6 @@
                     console.warn(`Castle "${marker.data.name}" does not have description`)
                 } else if (marker.data.description.length == 0) {
                     console.warn(`Castle "${marker.data.name}" does not have description`)
-                }
-
-                if (marker.data.image == undefined) {
-                    console.warn(`Castle "${marker.data.name}" does not have image`)
                 }
 
                 markerPosition.x -= topLeft.lat
@@ -173,16 +153,9 @@
                 markerPosition.x *= mapSize.width * zoomAmmount
                 markerPosition.y *= mapSize.height * zoomAmmount
 
-                const shadow = document.createElement("div")
-                shadow.className = 'marker-shadow'
-                shadow.id = 'map-marker-shadow-' + idCounter
-                node.appendChild(shadow)
-
-                const label = document.createElement("span")
-                label.className = 'marker-label'
-                label.id = 'map-marker-label-' + idCounter
-                label.innerText = marker.data.name
-                node.appendChild(label)
+                nodeChild.className = 'marker-shadow'
+                nodeChild.id = 'map-marker-shadow-' + idCounter
+                node.appendChild(nodeChild)
 
                 node.className = 'marker'
                 node.style.left = markerPosition.y

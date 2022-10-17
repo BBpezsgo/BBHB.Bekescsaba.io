@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./toolbar.css">
-    <link rel="stylesheet" href="./button.css">
 
     <style>
         :root {
@@ -15,20 +14,24 @@
             --quiz-label-right: #4da811;
         }
 
+        body {
+            background-image: url('./graphics/bg.png');
+            background-size: 64px;
+            image-rendering: pixelated;
+            font-family: Courier;
+        }
+
         .quiz-panel,
         .final-panel {
-            background-image: url('./graphics/brick2.png');
-            background-size: 32px;
+            background-image: url('./graphics/bg2.png');
+            background-size: 8px;
+            image-rendering: pixelated;
 
-            border: 2px solid #777;
+            border: 2px solid #ffd182;
 
             margin: 20px;
             padding: 20px;
-
-            box-shadow: inset #000a 0px 0px 100px 300px;
-
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-       }
+        }
 
         .answers > label {
             display: block;
@@ -40,40 +43,47 @@
             font-weight: 600;
         }
 
-        .container {
-            background-color: #555;
-            color: #fff;
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            border: #666 1px solid;
-            box-shadow: #000 0px 0px 20px;
+        button {
+            background-color: #fff3df;
+
+            border: 3px solid;
+            border-top-color: #ffe1ac;
+            border-left-color: #ffe1ac;
+            border-bottom-color: #ffd182;
+            border-right-color: #ffd182;
+        }
+
+        button:active {
+            background-color: #fff3df;
+            
+            border: 3px solid;
+            border-top-color: #ffd182;
+            border-left-color: #ffd182;
+            border-bottom-color: #ffe1ac;
+            border-right-color: #ffe1ac;
         }
     </style>
 </head>
 
 <body>
+    <div class="toolbar">
+        <a href="./map.html">
+            MAP
+        </a>
+        <a href="./quiz.html" active>
+            QUIZ
+        </a>
+    </div>
+
     <div class="container">
 
         <div id="quiz"></div>
 
         <div class="final-panel">
-            <button id="submit" class="button" onclick="showResults()">Submit Quiz</button>
+            <button id="submit" onclick="showResults()">Submit Quiz</button>
             <div id="results"></div>
         </div>
 
-    </div>
-
-    <a class="button" href="./index.html" style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-    ">
-        Vissza a főoldalra
-    </a>
-
-    <div class="mt-5 p-4 bg-dark text-white text-center">
-        <p>© Copyright 2022</p>
     </div>
 
     <script>
@@ -147,24 +157,6 @@
         }
     </script>
 
-    <style>
-        body::before {
-            content: "";
-            background-size: cover;
-            background-repeat: no-repeat;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: fixed;
-            z-index: -1;
-            background-position: center;
-            transition: background 2s ease-in-out;
-        }
-    </style>
-
-    <style id="bgStyle">body::before {background-image:url('./graphics/sky-low.jpg')}</style>
-    <script src="./background.js"></script>
 </body>
 
 </html>
