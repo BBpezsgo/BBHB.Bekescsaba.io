@@ -6,6 +6,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
+        :root {
+            --map-marker-ping-size: 75;
+        }
+
         body {
             margin: 0;
             overflow: hidden;
@@ -21,6 +25,7 @@
             position: fixed;
             z-index: 100;
             box-shadow: inset 0px 0px 40px #000;
+            pointer-events: none;
         }
 
         .marker {
@@ -32,6 +37,7 @@
             background-size: 100%;
             transform: translate(-50%, -100%);
             transition: transform 200ms;
+            z-index: 101;
         }
 
         .marker > .marker-shadow {
@@ -55,6 +61,33 @@
             height: 48px;
             transform: translate(6px, 2px) translateY(5px);
             filter: blur(1px);
+        }
+
+        .marker > .marker-ping:not(.map-marker-ping-hide) {
+            background: #e91c23;
+            border-radius: 50%;
+            width: 1px;
+            height: 1px;
+            animation: ping 1.5s ease-out infinite;
+            display: inline-block;
+            position: absolute;
+            top: 24px;
+            left: 16px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes ping {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(var(--map-marker-ping-size));
+            }
+            100% {
+                transform: scale(var(--map-marker-ping-size));
+                opacity: 0;
+            }
         }
 
         .marker > .marker-label {
@@ -138,6 +171,7 @@
                 mapSize.width = json["map-size"].width
                 mapSize.height = json["map-size"].height
                 Update()
+                ShowPing(null)
             })
         })
 
@@ -197,6 +231,11 @@
                 label.id = 'map-marker-label-' + idCounter
                 label.innerText = marker.data.name
                 node.appendChild(label)
+
+                const ping = document.createElement("div")
+                ping.className = 'marker-ping map-marker-ping-hide'
+                ping.id = 'map-marker-ping-' + idCounter
+                node.appendChild(ping)
 
                 node.className = 'marker'
                 node.style.left = markerPosition.y
@@ -261,6 +300,27 @@
 
             document.removeEventListener('mousemove', mouseMoveHandler)
             document.removeEventListener('mouseup', mouseUpHandler)
+        }
+
+        /** @param {number | null} id */
+        window.ShowPing = function(id) {
+            const pings = document.getElementsByClassName('marker-ping')
+            for (let i = 0; i < pings.length; i++) {
+                const ping = pings[i]
+                if (id == null || id == undefined) {
+                    if (!ping.classList.contains('map-marker-ping-hide')) {
+                        ping.classList.add('map-marker-ping-hide')
+                    }
+                } else if (ping.id == 'map-marker-ping-' + id) {
+                    if (ping.classList.contains('map-marker-ping-hide')) {
+                        ping.classList.remove('map-marker-ping-hide')
+                    }
+                } else {
+                    if (!ping.classList.contains('map-marker-ping-hide')) {
+                        ping.classList.add('map-marker-ping-hide')
+                    }
+                }
+            }
         }
 
         // Attach the handler

@@ -40,7 +40,7 @@
 <body>
     <div class="container">
         <div id="castle-info" style="display: none;">
-            <div class="close-btn" onclick="document.getElementById('castle-info').style.display = 'none'">
+            <div class="close-btn" onclick="document.getElementById('castle-info').style.display = 'none'; mapIframe.contentWindow.ShowPing(null);">
                 <img src="./images/x.png">
             </div>
 
@@ -124,12 +124,15 @@
                 while (descs.length > 0) {
                     descs[0].parentNode.removeChild(descs[0])
                 }
-                for (let i = 0; i < castle.description.length; i++) {
-                    const desc = castle.description[i]
-                    const newNode = document.createElement('p')
-                    newNode.innerText = desc
-                    castleInfo.appendChild(newNode)
+                if (castle.description !== null && castle.description !== undefined) {
+                    for (let i = 0; i < castle.description.length; i++) {
+                        const desc = castle.description[i]
+                        const newNode = document.createElement('p')
+                        newNode.innerText = desc
+                        castleInfo.appendChild(newNode)
+                    }
                 }
+                mapIframe.contentWindow.ShowPing(i)
             }
         </script>
     </div>
