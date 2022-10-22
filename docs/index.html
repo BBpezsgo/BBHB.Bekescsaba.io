@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./button.css">
     <link rel="stylesheet" href="./castle-list.css">
+    <link rel="stylesheet" href="./history-list.css">
     <link rel="stylesheet" href="./castle-info.css">
     <link rel="stylesheet" href="./container.css">
     <link rel="stylesheet" href="./global.css">
@@ -52,24 +53,137 @@
         <div id="castle-list">
 
         </div>
+
+        <div class="section-history">
+            <input id="history-slider" type="range" min="0" max="10" oninput="OnHistoryChange(event)">
+            <p id="history-label-year"></p>
+
+            <div id="history-list">
+
+            </div>
+
+            <script>
+                function SetHistorySliderValues(minYear, maxYear) {
+                    /** @type {HTMLInputElement} */
+                    const slider = document.getElementById('history-slider')
+                    slider.min = minYear / 100
+                    slider.max = maxYear / 100
+                    const year = slider.valueAsNumber * 100
+                    SetHistoryYearLabel((year-99) + ' - ' + year)
+                }
+
+                /** @param {Event} e */
+                function OnHistoryChange(e) {
+                    /** @type {HTMLInputElement} */
+                    const slider = document.getElementById('history-slider')
+                    const historyList = document.getElementById('history-list')
+                    const year = slider.valueAsNumber * 100
+                    SetHistoryYearLabel((year-99) + ' - ' + year)
+
+                    const oldElements = historyList.getElementsByTagName('div')
+                    while (oldElements.length > 0) {
+                        oldElements[0].parentNode.removeChild(oldElements[0])
+                    }
+
+                    GetEventsByYear(year, (current) => {
+                        console.log(current)
+                        var castleItem = document.getElementById('history-list-castle-' + current.castle.ID)
+
+                        if (castleItem === undefined || castleItem === null) {
+                            castleItem = document.createElement('div')
+
+                            const title = document.createElement('h1')
+                            title.innerText = current.castle.name
+                            castleItem.appendChild(title)
+
+                            const eventList = document.createElement('ul')
+                            castleItem.appendChild(eventList)
+
+                            historyList.appendChild(castleItem)
+                        }
+
+                        for (let i = 0; i < current.events.length; i++) {
+                            const event = current.events[i]
+
+                            const eventItem = document.createElement('li')
+
+                            if (event.icon !== null && event.icon !== undefined) {
+                                const eventItemIcon = document.createElement('img')
+                                eventItemIcon.src = `./images/events/${event.icon}.png`
+                                eventItemIcon.width = 16
+                                eventItemIcon.height = 16
+                                eventItem.appendChild(eventItemIcon)
+                            }
+
+                            const eventItemLabelTitle = document.createElement('span')
+                            eventItemLabelTitle.innerText = event.title
+                            eventItem.appendChild(eventItemLabelTitle)
+
+                            const eventItemLabelSeparator = document.createElement('span')
+                            eventItemLabelSeparator.innerText = ' - '
+                            eventItem.appendChild(eventItemLabelSeparator)
+
+                            const eventItemLabelYear = document.createElement('span')
+                            eventItemLabelYear.innerText = event.year
+                            eventItem.appendChild(eventItemLabelYear)
+
+                            const eventItemText = document.createElement('p')
+                            eventItemText.innerText = event.description
+                            eventItem.appendChild(eventItemText)
+
+                            castleItem.getElementsByTagName('ul')[0].appendChild(eventItem)
+                        }
+                    })
+                }
+
+                function SetHistoryYearLabel(text) {
+                    document.getElementById('history-label-year').innerText = text
+                }
+
+                /** @param {number} year @param {(current: { castle: any, events: any[] }) => void } callback */
+                function GetEventsByYear(year, callback) {
+                    for (let i = 0; i < castles.length; i++) {
+                        const castle = castles[i].data
+                        if (castle.events === undefined) { continue }
+                        const eventList = []
+                        for (let j = 0; j < castle.events.length; j++) {
+                            const event = castle.events[j]
+                            if (Math.floor(event.year / 100) * 100 !== year - 100) { continue }
+                            eventList.push(event)
+                        }
+                        if (eventList.length > 0) {
+                            callback({
+                                castle: castle,
+                                events: eventList
+                            })
+                        }
+                    }
+                }
+
+                SetHistorySliderValues(1000, 2000)
+            </script>
+        </div>
     
         <script>
             const castleInfo = document.getElementById('castle-info')
             const mapIframe = document.getElementsByTagName('iframe')[0]
             const castleList = document.getElementById('castle-list')
     
-            var markers = []
-            fetch('./jsons/map-markers.json')
+            var castles = []
+            fetch('./jsons/castles.json')
             .then((response) => {
                 response.json()
                 .then((json) => {
-                    markers = json.markers
+                    castles = json
                     const oldElements = castleList.getElementsByTagName('div')
                     while (oldElements.length > 0) {
                         oldElements[0].parentNode.removeChild(oldElements[0])
                     }
-                    for (let i = 0; i < markers.length; i++) {
-                        const castle = markers[i].data
+                    for (let i = 0; i < castles.length; i++) {
+                        castles[i].data.ID = i
+
+                        const castle = castles[i].data
+
                         const newElement = document.createElement('div')
                         newElement.addEventListener('click', (e) => { ShowCastleInfo(i) })
 
@@ -98,11 +212,7 @@
             }
 
             const ShowCastleInfo = (i) => {
-                /** @type {{
-                 *  name: string,
-                 *  description: string[]
-                 * }} */
-                const castle = markers[i].data
+                const castle = castles[i].data
                 castleInfo.style.display = 'block'
                 castleInfo.getElementsByTagName('h1')[0].innerText = castle.name
                 castleInfo.getElementsByTagName('img')[1].src = castle.image

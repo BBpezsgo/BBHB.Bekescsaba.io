@@ -154,7 +154,7 @@
         /** @type {{width: number, height: number}} */
         const mapSize = {}
 
-        var markers = []
+        var castles = []
 
         /** @param {MouseEvent} e */
         const OnMarkerClicked = (e) => {
@@ -167,12 +167,10 @@
             }, 1)
         }
 
-        fetch('./jsons/map-markers.json')
+        fetch('./jsons/map.json')
         .then((response) => {
             response.json()
             .then((json) => {
-                markers = json.markers
-
                 topLeft.lon = json["top-left"].lon
                 topLeft.lat = json["top-left"].lat
                 
@@ -184,6 +182,16 @@
 
                 mapSize.width = json["map-size"].width
                 mapSize.height = json["map-size"].height
+                Update()
+                ShowPing(null)
+            })
+        })
+
+        fetch('./jsons/castles.json')
+        .then((response) => {
+            response.json()
+            .then((json) => {
+                castles = json
                 Update()
                 ShowPing(null)
             })
@@ -210,7 +218,7 @@
             MapElement.style.height = mapSize.height * zoomAmmount
 
             var idCounter = 0
-            markers.forEach(marker => {
+            castles.forEach(marker => {
                 const node = document.createElement("div")
 
                 /** @type {{x: number, y: number}} */
@@ -220,6 +228,10 @@
                     console.warn(`Castle "${marker.data.name}" does not have description`)
                 } else if (marker.data.description.length == 0) {
                     console.warn(`Castle "${marker.data.name}" does not have description`)
+                }
+
+                if (marker.data.events == undefined) {
+                    console.warn(`Castle "${marker.data.name}" does not have events`)
                 }
 
                 if (marker.data.image == undefined) {

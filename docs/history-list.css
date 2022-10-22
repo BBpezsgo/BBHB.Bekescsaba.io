@@ -1,0 +1,91 @@
+/*
+ * List container
+ */
+ 
+ #history-list {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    height: 200px;
+    white-space: nowrap;
+}
+
+/*
+ * Content holder
+ */
+
+#history-list>div {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 4px;
+    height: 150px;
+    border: 1px solid #666;
+    box-shadow: #000a 3px 3px 3px;
+    transition: filter 300ms ease, outline 100ms ease;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/*
+ * Content
+ */
+
+#history-list .content {
+    transform: translateY(-130px);
+    padding: 10px;
+}
+
+#history-list h1 {
+    font-size: large;
+    transition: transform 400ms ease;
+}
+
+#history-list .bg {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    filter: blur(1px) brightness(50%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 0px 40px #000;
+    transition: transform 400ms ease;
+}
+
+#history-list>div ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#history-list>div li {
+    border: 2px solid #777;
+    background-color: #7773;
+    padding: 3px;
+    border-radius: 2px;
+}
+
+#history-list>div li:hover {
+    filter: sepia(1);
+}
+
+#history-list>div li img {
+    margin-right: 4px;
+    transform: translateY(-2px);
+}
+
+#history-list>div li p {
+    opacity: 0;
+    margin: 0;
+    max-height: fit-content;
+    height: 0px;
+    transition: height 200ms, opacity 200ms;
+}
+
+#history-list>div li:hover p {
+    opacity: 1;
+    height: 30px;
+    margin: unset;
+}
