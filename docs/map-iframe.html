@@ -118,11 +118,25 @@
             background-repeat: no-repeat;
             filter: brightness(0.7) contrast(2) sepia(0.4);
         }
+
+        #megye {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 955px;
+            height: 946px;
+            background-image: url('./images/megye.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: blur(10px);
+            opacity: .4;
+        }
     </style>
 </head>
 
 <body id="container">
     <div id="map"></div>
+    <div id="megye"></div>
     <div id="overlay"></div>
 
     <script>
@@ -269,8 +283,6 @@
                     x: e.clientX,
                     y: e.clientY,
                 }
-
-                window.parent.document.getElementById('debug').innerText = `${pos.x + pos.left} - ${pos.y + pos.top}`
 
                 document.addEventListener('mousemove', mouseMoveHandler)
                 document.addEventListener('mouseup', mouseUpHandler)
