@@ -18,6 +18,8 @@
     color: #fff;
 
     box-shadow: #000 0px 0px 16px, inset #000a 0px 0px 100px 300px;
+
+    z-index: 999;
 }
 
 #castle-info>h1 {
