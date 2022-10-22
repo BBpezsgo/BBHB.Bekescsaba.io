@@ -107,25 +107,34 @@
 
                             const eventItem = document.createElement('li')
 
+                            const eventItemHeader = document.createElement('div')
+
                             if (event.icon !== null && event.icon !== undefined) {
                                 const eventItemIcon = document.createElement('img')
                                 eventItemIcon.src = `./images/events/${event.icon}.png`
                                 eventItemIcon.width = 16
                                 eventItemIcon.height = 16
-                                eventItem.appendChild(eventItemIcon)
+                                eventItemIcon.style.userSelect = 'none'
+                                eventItemIcon.style.display = 'inline-block'
+                                eventItemHeader.appendChild(eventItemIcon)
                             }
 
                             const eventItemLabelTitle = document.createElement('span')
                             eventItemLabelTitle.innerText = event.title
-                            eventItem.appendChild(eventItemLabelTitle)
+                            eventItemLabelTitle.style.userSelect = 'none'
+                            eventItemHeader.appendChild(eventItemLabelTitle)
 
                             const eventItemLabelSeparator = document.createElement('span')
                             eventItemLabelSeparator.innerText = ' - '
-                            eventItem.appendChild(eventItemLabelSeparator)
+                            eventItemLabelSeparator.style.userSelect = 'none'
+                            eventItemHeader.appendChild(eventItemLabelSeparator)
 
                             const eventItemLabelYear = document.createElement('span')
                             eventItemLabelYear.innerText = event.year
-                            eventItem.appendChild(eventItemLabelYear)
+                            eventItemLabelYear.style.userSelect = 'none'
+                            eventItemHeader.appendChild(eventItemLabelYear)
+
+                            eventItem.appendChild(eventItemHeader)
 
                             const eventItemText = document.createElement('p')
                             eventItemText.innerText = event.description

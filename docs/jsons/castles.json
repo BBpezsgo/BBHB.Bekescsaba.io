@@ -15,19 +15,7 @@
                     "year": 1870,
                     "icon": "built",
                     "title": "Építés",
-                    "description": "Beliczey Miklós"
-                },
-                {
-                    "year": 1870,
-                    "icon": "built",
-                    "title": "Építés",
-                    "description": "Beliczey Miklós"
-                },
-                {
-                    "year": 1870,
-                    "icon": "built",
-                    "title": "Építés",
-                    "description": "Beliczey Miklós"
+                    "description": "Beliczey Miklós felépítette"
                 },
                 {
                     "year": 1910,
@@ -45,7 +33,15 @@
             "description": [
                 "A XIX. század második felének elején Pollack Mihály tervei alapján építtették át a báró Wenckheim-kastélyt. 1855-62 között báró Wenckheim Béla megépíttette Ybl Miklós tervei szerint romantikus stílusban a fási vadászkastélyát. 1879-ben halt meg báró Wenckheim Béla, Békés megye háromszori főispánja, a kiegyezés után belügy, majd a király személye körüli miniszter, aki 1875-ben miniszterelnök is volt. Végakarata szerint a körösladányi családi kriptában helyezték örök nyugalomra. A körösladányi birtokait a kastéllyal László öccse gyermekei, a fási részt a vadászkastéllyal a másik testvére, Viktor, illetve utóda, gróf Hoyos Wenckheim Fülöp örökölte. Körösladányban birtokkal bírt még a húga, Wenckheim Paulina bárónő is. (1935-36 között gróf Csáky Imréné, Sztáray Mária grófnő kastéllyá alakíttatta át a báró Wenckheim örökséget képező egykori tiszttartói lakot. 1939-ben ebben a gróf Csáky- vagy más néven kiskastélyban forgatták a Szlatinay Sándor rendezte Bercsényi huszárok című film egyes jeleneteit.) 1951-re a báró Wenckheim-, illetve gróf Meran-kastélyban központi általános iskolát alakítottak ki. Napjainkban A 23 szobás saroktornyos, romantikus vadászkastélyban 1998. április 15-ig nevelőotthon működött. Az épület a Békés Megyei Önkormányzat tulajdonában volt, 1994-ben fel is újították. 2000-ben kiürítették. 2007-től magántulajdonban van. Idegenforgalom számára zárt, csak külső megtekintése lehetséges."
             ],
-            "image": "https://www.wenckheim.hu/images/korosladany_01.jpg"
+            "image": "https://www.wenckheim.hu/images/korosladany_01.jpg",
+            "events": [
+                {
+                    "year": 1850,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "Pollack Mihály tervei alapján átépíttették a báró Wenckheim-kastélyt"
+                }
+            ]
         }
     },
     {

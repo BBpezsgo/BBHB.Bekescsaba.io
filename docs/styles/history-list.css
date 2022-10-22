@@ -18,11 +18,11 @@
     display: inline-block;
     margin: 10px;
     border-radius: 4px;
-    height: 150px;
     border: 1px solid #666;
     box-shadow: #000a 3px 3px 3px;
     transition: filter 300ms ease, outline 100ms ease;
-    overflow: hidden;
+    overflow-y: scroll;
+    height: 90%;
     padding: 20px;
 }
 
@@ -65,6 +65,14 @@
     background-color: #7773;
     padding: 3px;
     border-radius: 2px;
+    margin: 20px 0px;
+    width: 200px;
+    overflow-y: hidden;
+}
+
+#history-list>div li > div {
+    border-bottom: 1px solid #999;
+    margin-bottom: 15px;
 }
 
 #history-list>div li:hover {
@@ -77,15 +85,9 @@
 }
 
 #history-list>div li p {
-    opacity: 0;
-    margin: 0;
-    max-height: fit-content;
-    height: 0px;
-    transition: height 200ms, opacity 200ms;
+    white-space: normal;
 }
 
 #history-list>div li:hover p {
-    opacity: 1;
-    height: 30px;
-    margin: unset;
+    
 }
