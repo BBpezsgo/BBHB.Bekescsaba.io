@@ -13,7 +13,6 @@ Készíts weboldalt, amely bemutatja a fenti témát. Legalább 20 tétel legyen
 - anyaggyűjtés, tervezés
 - weboldal
 - teszt
-- útvonal-tervezés, majd bejárás-ellenőrzés
 - bemutatás
 
 # Csapat tagjai:
