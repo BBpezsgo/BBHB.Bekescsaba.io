@@ -73,6 +73,7 @@
 #history-list>div li > div {
     border-bottom: 1px solid #999;
     margin-bottom: 15px;
+    white-space: normal;
 }
 
 #history-list>div li:hover {

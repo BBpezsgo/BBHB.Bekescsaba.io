@@ -1,7 +1,7 @@
 {
     "questionz": [
         {
-            "question": "1:Hány darab Wenckheim kastély található békés megyében?",
+            "question": "1: Hány darab Wenckheim kastély található békés megyében?",
             "answers": {
                 "a": "7",
                 "b": "3",
@@ -10,7 +10,7 @@
             "correctAnswer": "c"
         },
         {
-            "question": "2:Melyik magyar kastélyba mutattak be elsőnek színdarabot?",
+            "question": "2: Melyik magyar kastélyba mutattak be elsőnek színdarabot?",
             "answers": {
                 "a": "Kárász kastély",
                 "b": "Gyulai Almássy Kastély",
@@ -19,7 +19,7 @@
             "correctAnswer": "b"
         },
         {
-            "question": "3:Melyik kastélyba találhatóak a legrégebbi fák melyek nagy része védett?",
+            "question": "3: Melyik kastélyba találhatóak a legrégebbi fák melyek nagy része védett?",
             "answers": {
                 "a": "Beliczay-kastély",
                 "b": "Hunyadi kastély",
@@ -28,7 +28,7 @@
             "correctAnswer": "a"
         },
         {
-            "question": "4:Melyik kastély egykori puszta faluja csatlakozott dobozhoz községhez?",
+            "question": "4: Melyik kastély egykori puszta faluja csatlakozott dobozhoz községhez?",
             "answers": {
                 "a": "Hunyadi kastély",
                 "b": "Bolza-kastély",
@@ -37,7 +37,7 @@
             "correctAnswer": "c"
         },
         {
-            "question": "5:Kondoros önkormányzata mikor kezdte meg a felvásárlását a Batthyány-Geist kastélynak?",
+            "question": "5: Kondoros önkormányzata mikor kezdte meg a felvásárlását a Batthyány-Geist kastélynak?",
             "answers": {
                 "a": "2001",
                 "b": "1993",
@@ -46,7 +46,7 @@
             "correctAnswer": "b"
         },
         {
-            "question": "6:Melyik megye alispánja építtetett kastélyt az anyósa tiszteletére?",
+            "question": "6: Melyik megye alispánja építtetett kastélyt az anyósa tiszteletére?",
             "answers": {
                 "a": "Hajdú-Bihar",
                 "b": "Csongrád-Csanád megye",
@@ -55,7 +55,7 @@
             "correctAnswer": "c"
         },
         {
-            "question": "7:Kárász kastély egyik szárnyán milyen apropón volt üvegtető?",
+            "question": "7: Kárász kastély egyik szárnyán milyen apropón volt üvegtető?",
             "answers": {
                 "a": "mert akkoriban ez egy státusz szimbolum volt",
                 "b": "csillagászati célok miatt",
@@ -64,7 +64,7 @@
             "correctAnswer": "b"
         },
         {
-            "question": "8:Melyik kastélyunk helyezkedik el a Orosházi kiscsákó területén?",
+            "question": "8: Melyik kastélyunk helyezkedik el a Orosházi kiscsákó területén?",
             "answers": {
                 "a": "Léderer kastély",
                 "b": "Geist-kastély(Geist-Reckmann-kastély)",
@@ -73,16 +73,16 @@
             "correctAnswer": "b"
         },
         {
-            "question": "9:Melyik kastélynak van híres alagút rendszere, amit alkalmazni is kellett?",
+            "question": "9: Melyik kastélynak van híres alagút rendszere, amit alkalmazni is kellett?",
             "answers": {
-                "a": "Kárász  kastély",
+                "a": "Kárász kastély",
                 "b": "Vásárhelyi-Bréda-kastély",
                 "c": "Hunyadi kastély"
             },
             "correctAnswer": "c"
         },
         {
-            "question": "10:Melyik kastélyt használták katonai korháznak és éteremnek is?",
+            "question": "10: Melyik kastélyt használták katonai korháznak és éteremnek is?",
             "answers": {
                 "a": "Gyulai Almássy kastély",
                 "b": "Batthyány-Geist Kastély",
@@ -91,7 +91,7 @@
             "correctAnswer": "c"
         },
         {
-            "question": "11:Hány darab Wenckheim kastély található a megyénkben?",
+            "question": "11: Hány darab Wenckheim kastély található a megyénkben?",
             "answers": {
                 "a": "2",
                 "b": "5",
@@ -100,7 +100,7 @@
             "correctAnswer": "b"
         },
         {
-            "question": "12:Melyik kastély kápolnájának mennyezetén volt található angyalokat ábrázoló freskó?",
+            "question": "12: Melyik kastély kápolnájának mennyezetén volt található angyalokat ábrázoló freskó?",
             "answers": {
                 "a": "Almásy kastély",
                 "b": "Gyulavári kastély",
@@ -109,7 +109,7 @@
             "correctAnswer": "b"
         },
         {
-            "question": "13:Melyik kastély volt régen a mai Medgyesegyházái idősek otthona?",
+            "question": "13: Melyik kastély volt régen a mai Medgyesegyházái idősek otthona?",
             "answers": {
                 "a": "Telbisz-kastély",
                 "b": "Bolza-kastély",
@@ -118,7 +118,7 @@
             "correctAnswer": "a"
         },
         {
-            "question": "14:Melyik költő töltött huzamosabb időt a Szlávy-Schwarcz kastélyban?",
+            "question": "14: Melyik költő töltött huzamosabb időt a Szlávy-Schwarcz kastélyban?",
             "answers": {
                 "a": "József Atilla",
                 "b": "Kiss József",
@@ -127,7 +127,7 @@
             "correctAnswer": "b"
         },
         {
-            "question": "15:Milyen stílusban épült a Wenckheim-Fejérváry-kastély?",
+            "question": "15: Milyen stílusban épült a Wenckheim-Fejérváry-kastély?",
             "answers": {
                 "a": "Ókori egyiptomi",
                 "b": "Ókori egyiptomi",
@@ -136,7 +136,7 @@
             "correctAnswer": "c"
         },
         {
-            "question": "16:Mi tartozott a Wenckheim-Fejérváry-kastély?",
+            "question": "16: Mi tartozott a Wenckheim-Fejérváry-kastély?",
             "answers": {
                 "a": "uszoda",
                 "b": "iskola",
@@ -145,7 +145,7 @@
             "correctAnswer": "c"
         },
         {
-            "question": "17:Kinek a fia volt Ursznyi Dezső?",
+            "question": "17: Kinek a fia volt Ursznyi Dezső?",
             "answers": {
                 "a": "Ursznyi Andor",
                 "b": "Ursznyi János",
@@ -154,7 +154,7 @@
             "correctAnswer": "a"
         },
         {
-            "question": "18:Milyen jelleggel bírt Wenckheim Rudolf  volt kastélya?",
+            "question": "18: Milyen jelleggel bírt Wenckheim Rudolf  volt kastélya?",
             "answers": {
                 "a": "Barok",
                 "b": "Vadász",
@@ -163,7 +163,7 @@
             "correctAnswer": "b"
         },
         {
-            "question": "19:Melyik kastélyunk a Maros Nemzeti Park Igazgatóság székhelye?",
+            "question": "19: Melyik kastélyunk a Maros Nemzeti Park Igazgatóság székhelye?",
             "answers": {
                 "a": "Kárász kastély",
                 "b": "Tisza kastély",
@@ -172,7 +172,7 @@
             "correctAnswer": "c"
         },
         {
-            "question": "20:A Tisza kastély melyik tulaja hagyta el az országot és ment amerikába?",
+            "question": "20: A Tisza kastély melyik tulaja hagyta el az országot és ment amerikába?",
             "answers": {
                 "a": "Tisza István",
                 "b": "Kálmán Lajos",

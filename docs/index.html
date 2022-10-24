@@ -145,9 +145,11 @@
 
                             eventItem.appendChild(eventItemHeader)
 
-                            const eventItemText = document.createElement('p')
-                            eventItemText.innerText = event.description
-                            eventItem.appendChild(eventItemText)
+                            if (event.description !== undefined) {
+                                const eventItemText = document.createElement('p')
+                                eventItemText.innerText = event.description
+                                eventItem.appendChild(eventItemText)
+                            }
 
                             castleItem.getElementsByTagName('ul')[0].appendChild(eventItem)
                         }
