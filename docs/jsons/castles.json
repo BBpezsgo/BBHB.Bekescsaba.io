@@ -40,6 +40,11 @@
                     "icon": "built",
                     "title": "Építés",
                     "description": "Pollack Mihály tervei alapján átépíttették a báró Wenckheim-kastélyt"
+                },
+                {
+                    "year": 1850,
+                    "title": "Wenckheim meghalt",
+                    "description": "1879-ben halt meg báró Wenckheim Béla, Békés megye háromszori főispánja"
                 }
             ]
         }
@@ -63,7 +68,25 @@
                 "Mint uradalmi kastély nemcsak Szentandrás, de az egész környék közigazgatási központja is volt az ódon épület. Pincéi tömlöcként működtek és a legendás alagútrendszer többször is megmentette a kastély lakóinak az életét.",
                 "Több alkalommal is megostromolták az épületet. A homlokzat mind a mai napig számos golyónyomot őriz ennek emlékeként. A középiskolai történelemkönyvekből is ismert utolsó magyar parasztfelkelés 1735. április 27-én ennek a kastélynak az ostromával kezdődött meg. Természetesen az évszázadok során sok híres ember is megfordult itt, azonban az egyik legtöbbet emlegetett esemény mégis az a főnemesi gyűlés volt, ami végül vérfürdőbe torkollott. A kastély a bárók távozása után is mozgalmas életet élt."
             ],
-            "image": "https://bekesszentandras.kornyeke.hu/fotok/tartalom/8/7956-211126941041422874.jpg"
+            "image": "https://bekesszentandras.kornyeke.hu/fotok/tartalom/8/7956-211126941041422874.jpg",
+            "events": [
+                {
+                    "year": 1700,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "Ugyanazon a helyen áll, ahol a Hunyadiak által épített korábbi kastély állt."
+                },
+                {
+                    "year": 2723,
+                    "title": "Lakhatóvá vált",
+                    "description": "A török dúlás során leromlott állapotúvá vált kastélyt 1723-ban az új földesúr újra lakhatóvá tette."
+                },
+                {
+                    "year": 1735,
+                    "title": "Ostrom",
+                    "description": "Az utolsó magyar parasztfelkelés 1735. április 27-én ennek a kastélynak az ostromával kezdődött."
+                }
+            ]
         }
     },
     {
@@ -126,7 +149,20 @@
                 "A kastély az olaszországi vicenzai Villa la Rotonda utánérzése, klasszicista stílusban épült és immár felújítva áll impozánsan az Őt körül vevő őspark közepén. A kastélykertben épült fel 1810. körül a Szent Anna kápolna és családi kripta az akkori tulajdonosnak, Vásárhelyi Albertné Brünek Judithnak köszönhetően, s lebontásáig majdnem 120 évig állt a kastély parkjában az öreg tölgyfák két sora között.",
                 "A kastély története szorosan kapcsolódik a történelemhez, hiszen a közel 200 esztendő alatt az örökösök és tulajdonosok számos és jeles tettel és cselekedettel írták be magukat a térség történelmébe. A kastély a mai nevét utolsó tulajdonosáról gróf Bréda Viktorról kapta, aki 1938-ban halt meg a kastély falai között."
             ],
-            "image": "https://www.kastelyok.com/images/119/119_1.jpg"
+            "image": "https://www.kastelyok.com/images/119/119_1.jpg",
+            "events": [
+                {
+                    "year": 1806,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "A mocsarak lecsapolása után a megmaradt homokdombra épült fel a kastély."
+                },
+                {
+                    "year": 1938,
+                    "title": "Bréda Viktorról meghal",
+                    "description": "A kastély a mai nevét utolsó tulajdonosáról gróf Bréda Viktorról kapta, aki 1938-ban halt meg a kastély falai között."
+                }
+            ]
         }
     },
     {
@@ -183,7 +219,14 @@
             "description": [
                 "Építtetője az 1830-as évek második felében, horgosi Kárász Miklós (III. Miklós) aranykulcsos kamarás, a királyi hétszemélyes tábla tagja, Wenckheim Henrietta férje. A kastélyt középen négy toszkán oszlopos szárazbejáró és a mögötte lévő felső szintre vezető lépcsőház két szimmetrikus szárnyra tagolta. Fia, Kárász Imre az épületet az 1865 után Ybl Miklós tervei alapján a keleti oldalon keresztszárnnyal bővítette és közvetlen szomszédságában kétszintes, teraszos zenepavilont emeltetett. A kastély ekkor kapott manzárdtetőt, hogy a fürdőszobák vízellátását biztosító víztartályoknak helye legyen, illetve a keresztszárnyat üvegtető fedte, mely csillagvizsgálóként szolgált. 1944- ben a kastélyt kifosztó helyi lakosság (nyomukat eltüntetni akarva) felgyújtotta az épületet. 1945-ben itt működött a járási internáló tábor. 1946-ban a helyi Mezőgazdasági Középiskola kapta meg. 1951-ben a leégett kétharmad részét elbontották, majd 1954-ben középiskolai leánykollégiumot alakítottak ki benne. A kastély megmaradt Ybl-szárnyát 2004-ben teljes egészében renoválták és ma ismét kollégiumi szerepet tölt be."
             ],
-            "image": "https://www.kastelyok.com/images/130/130_1.jpg"
+            "image": "https://www.kastelyok.com/images/130/130_1.jpg",
+            "events": [
+                {
+                    "year": 1830,
+                    "icon": "built",
+                    "title": "Építés"
+                }
+            ]
         }
     },
     {
@@ -198,7 +241,15 @@
                 "A II. világháború alatt katonai kórházként is funkcionált, majd államosították. 1960-ban tetőszerkezete leégett. Felújítása után irodaépületként működött. A csókai közigazgatás vette át és a községet szolgálta mindaddig, amíg a kastéllyal szemközt álló, időközben megszűnt csókai állattenyésztési középiskola átalakításra nem került.",
                 "zután a kastély még egy átalakításon esett át. Alagsora vendéglátóipari funkciót látott el. Jó nevű konyhája, étterme volt, kis melléktermekkel és pár vendégszobával. A földszinti és az emeleti részt a Kombinát és a Rét munkaszervezetek osztották meg egymás között a rendszerváltásig, miután minden gazdaság hanyatlani kezdett."
             ],
-            "image": "http://ertektar.rs/admin/files/15871144625951736.jpg"
+            "image": "http://ertektar.rs/admin/files/15871144625951736.jpg",
+            "events" :[
+                {
+                    "year": 1860,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "Az 1860-as évek elején kezdte építtetni a család rangjához illő új otthont, kastélyt."
+                }
+            ]
         }
     },
     {
@@ -217,7 +268,19 @@
                 
                 " Ez az első magyarországi kastély, amelyben már 1746-ban színdarabot mutattak be. Himnuszunk zeneszerzőjének nagyapja kulturális udvarmesterként élt a falai között – s maga Erkel Ferenc is gyakran megfordult itt. "
             ],
-            "image": "https://csodalatosmagyarorszag.hu/wp-content/uploads/2021/03/gyula-almasy-kastely-stefania-szarny-latogatokozpont-csodalatosmagyarorszag-1536x864.jpg"
+            "image": "https://csodalatosmagyarorszag.hu/wp-content/uploads/2021/03/gyula-almasy-kastely-stefania-szarny-latogatokozpont-csodalatosmagyarorszag-1536x864.jpg",
+            "events": [
+                {
+                    "year": 1723,
+                    "title": "Harruckern János György megkapta az uradalmat"
+                },
+                {
+                    "year": 1740,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "A kastély építése már 1745 előtt kezdetét vette, és egészen 1902-ig tartott."
+                }                
+            ]
         }
     },
     {
@@ -240,7 +303,13 @@
                 "Az 1760 óta Orosházához tartozó Gáspártelken, a kiscsákói Geist-majorban fekszik a földszintes épület. A főpárkány alatt körös-körül végigfutó, páratlanul gazdag, színes, széles táblás, virágos, alakos sgraffito díszítés mellett értékes a nagyterem kazettás famennyezette is.",
                 "Az eredetileg vadászháznak épített kastélyt Geisz Gáspár vásárolta meg a Batthyány családtól 1880-ban.Ybl Miklós tervei alapján átépítette kastéllyá. A II. világháború után állami tulajdonba került, volt benne TSZ iroda, ifjúsági klub, majd 1992-ben német magán tulajdonba került. Az új tulajdonos kastélyszállóvá kívánta átalakítani és egyben felújítani. Az építési tervek elkészültek, és elkezdték a felújítást, de a tulajdonos meghalt, és a kastélyt két fiatalkorú gyermeke örökölte. Az átépítés és felújítás abba maradt, 10 éve már üresen áll, Őrzéséről gondoskodott a család képviselője. Az épület tetőzete siralmas állapotba került, a kastély mindenhol beázik. A felújítás és átalakítás furcsa módon belül kezdődött el, kandalló építéssel, valamint kicserélték az ablakokat, és az ablak keretek stukkó díszítésével folytatták. A Geist Gáspár kastélyt, Karl-Heinz Reckmann Úr elkezde felújítani kívül belül egyaránt, hiszen itt szeretett volna lakni. Sajnálatos módon egy betegség miatt elhunyt, és így a kastélyfelújítás félbe maradt. Az épületben már a villamos vezetékek részben be vannak fűzve, újra van csövezve a ház. Néhol új nyílászárók vannak beépítve. Vasbeton födém vagy egy részen új gerendák, amellyek eső esetén áznak! Mivel a felújítás során a tetőszerkezet meg lett bontva, több helyen beázik. Pár éve tudomásom szerint gyulai mesterek lefóliázták a tetőt, de ez is szép lassan tönkremegy."
             ],
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Kiscs%C3%A1k%C3%B3%2C_Geist_G%C3%A1sp%C3%A1r-kast%C3%A9ly._Fortepan_75721.jpg/1200px-Kiscs%C3%A1k%C3%B3%2C_Geist_G%C3%A1sp%C3%A1r-kast%C3%A9ly._Fortepan_75721.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Kiscs%C3%A1k%C3%B3%2C_Geist_G%C3%A1sp%C3%A1r-kast%C3%A9ly._Fortepan_75721.jpg/1200px-Kiscs%C3%A1k%C3%B3%2C_Geist_G%C3%A1sp%C3%A1r-kast%C3%A9ly._Fortepan_75721.jpg",
+            "events": [
+                {
+                    "year": 1880,
+                    "title": "Geisz Gáspár megvásárolta a Batthyány családtól a kastélyt"
+                }
+            ]
         }
     },
     {
@@ -253,7 +322,14 @@
 
                 "A II. világháború után a helyi MGTSZ tulajdonába került a major. A ’70-es évek idején lovasmajorként működött, több mint 100 lóval. A ’80-as években az MGTSZ felszámolta a teljes lóállományt, így major üresen állt, mintegy 10 évig, mely idő alatt jelentősen lepusztult. A 2000. évben Oláh Tibor és családja vásárolta fel a komplexumot, majd megindult fokozatos restauráció, hogy a Babó Major újra visszakapja régi szépségét. A felújítás keretei között került sor a több, mint 100 éves kastély épületének teljes helyreállítására is. Két teljes év alatt sikerült visszaállítani a patinás épület régi fényét, amely azóta szálláshelyként szolgálja az ide látogatók kényelmét. "
             ],
-            "image": "https://babokastely.hu/wp-content/uploads/2019/08/IMG_2526.jpg"
+            "image": "https://babokastely.hu/wp-content/uploads/2019/08/IMG_2526.jpg",
+            "events": [
+                {
+                    "year": 2000,
+                    "title": "Oláh Tibor és családja felvásárolta",
+                    "description": "A 2000. évben Oláh Tibor és családja vásárolta fel a komplexumot, majd megindult fokozatos restauráció."
+                }
+            ]
         }
     },
     {
@@ -266,7 +342,15 @@
                 "Az 1848-49-es szabadságharc alatt itt szállt meg Nagysándor József, Knézich Jenő és lovag Poeltenberg Ernő honvéd tábornokok, később aradi vértanúk is. Az épület szabadon álló, földszintes, megközelítően téglalap alaprajzú. A kúria egyenes záródású ablakai kereteltek, alattuk könyöklőpárkány és - a főhomlokzaton - táblás köténydísz látható. A kúria sarkait több helyen lizéna díszíti, az épületen főpárkány fut körül. A kocsialáhajtó alatt nyíló keretelt ajtó felett félköríves fölülvilágítót alakítottak ki, az ajtó két oldalán lévő ablakok alatt",
                 "könyöklőpárkány és vakolattükrüs köténydísz, felettük egyenes szemöldökpárkány látható. 1917-től a grófi család már csak a kúria egyik részét használta, másik részét bérbe adta a Magyar Föld Rt.-nek, amely a sarkadi Almásy-birtokok bérlője volt. Napjainkban az Ady Endre-Bay Zoltán Középiskola és Kollégium könyvtára található az épületben, valamint helyet kapott az Ady-gyűjtemény, iskolatörténeti- és postatörténeti-kiálíítás is. "
             ],
-            "image": "https://www.historicgarden.net/kepek/924/306931.jpg"
+            "image": "https://www.historicgarden.net/kepek/924/306931.jpg",
+            "events": [
+                {
+                    "year": 1829,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "Az 1829-ben épült klasszicista kúria építését, Almásy Ignác rendelte el."
+                }
+            ]
         }
     },
     {
@@ -277,7 +361,14 @@
             "description": [
                 "A Szlávy család kastélyt is építtetett a falu határában, melyet a község későbbi nagybirtokosa az Okányi-Schwarcz család szerzett meg. Petőfi Sándor több alkalommal is átutazott a falun. Kiss József költő huzamosabb időt töltött a településen vándortanítóként. Schwarcz József kastélyából 1950-ben kezdték kialakítani a Szociális Otthont. Az épület bővítések és felújítások után is megtartotta, őrzi eredeti formájának legfőbb vonalait. A második világháború utáni évektől szociális gondozó intézményként és jelenleg is a Hajnal István Szociális Intézmény részeként működik. "
             ],
-            "image": "https://www.kastelyok.com/images/123/123_1.jpg"
+            "image": "https://www.kastelyok.com/images/123/123_1.jpg",
+            "events": [
+                {
+                    "year": 1950,
+                    "title": "Átépítés",
+                    "description": "Schwarcz József kastélyából 1950-ben kezdték kialakítani a Szociális Otthont."
+                }
+            ]
         }
     },
     {
@@ -288,7 +379,15 @@
             "description": [
                 "A Wenckheim család uradalmi kastélya az 1800-as évek elején épült copf-empire stílusban. A Wenckheim kastélyban néhány évig leánynevelő intézet működött, amit Festetich Vincéné vezetett. 1838-40 között Szendrey Júlia is az intézet tanulója volt. Petőfi Sándor is sok szállal kötődött Berényhez. Baráti és rokoni szálak fűzték Orlai Petrics Somához, a magyar történelmi festészet jeles alakjához. Az egyemeletes épülethez nagy park tartozott, üvegházzal. A második világháborúban a bal szárnya és a portikusza elpusztult. Az eredetileg könyvtárnak és múzeumnak szánt épületben jelenleg az Orlai Petrics Soma Múzeális Gyűjtemény tekinthető meg. Ma iskola és könyvtár. A kastély 5 hektáros parkjának hátsó része városligetként maradt fenn, értékes kertépítészeti részletekkel és fából épített nyári pavilonnal. 2007-ben felújították a teljes tetőszerkezetét. "
             ],
-            "image": "https://www.wenckheim.hu/images/mezobereny_01.jpg"
+            "image": "https://www.wenckheim.hu/images/mezobereny_01.jpg",
+            "events": [
+                {
+                    "year": 1800,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "A Wenckheim család uradalmi kastélya az 1800-as évek elején épült copf-empire stílusban."
+                }
+            ]
         }
     },
     {
@@ -334,9 +433,27 @@
         "data": {
             "name": "Tisza-kastély ",
             "description": [
-                "1772-ben épült fel a Tisza család geszti birtokán az a barokk stílusban épült kúria, amely később a kialakításra került kastély magját alkotta. Az épület már a XVIII. század végén is L alaprajzú volt, mindkét szárny alatt pince nyugodott. A század végére készült el a kastély fő szárnyának középső traktusa, a kocsiáthajtó fölé épített négytengelyes, klasszicizáló késő barokk stílusú pavilon. Az első birtokos beköltözése után került kiépítésre az angolkert. A 15 hektáros kertet a XIX. század elején alakították ki egy kisebb erdőrészből. Az egykor locsolóhálózattal is ellátott terület napjainkban már csak 5,4 hektárt tesz ki. Tisza Kálmán 1856-ban került a geszti uradalom élére. Birtokossága ideje alatt az addig földszintes épületre egy emeletet húztak fel, és ekkor kerültek kialakításra többek között a miniszterelnök dolgozószobája, a Nagy- és Kisszalon, illetve a grófnő dolgozó szobája, továbbá a kastély keleti szárnyának külső terasza is ekkor épült. A kastély 1902-ben lett Tisza Istváné, aki további átalakításokat végeztetett az épületen. Ekkor került sor az elektromos áram bevezetésére, a telefonvonal bekötésére, valamint a padlástérben egy új hideg-meleg vizes tartályt helyeztek el. Tisza István fia, Kálmán-Lajos birtokossága idején korszerűsítették a nyílászárókat. A második világháború után, a kastély teljes berendezése megsemmisült, Kálmán-Lajos pedig az Egyesült Államokba költözött. Az államszocializmus idején az épület egy iskolának és művelődésháznak, később könyvtárnak adott otthont. A kastélyban otthont adó, a család történetét bemutató kiállítás számos attrakcióval várja a látogatókat. A XXI. század technológiáját felhasználva megismerhetjük a Tisza családot, Tisza Kálmán és Tisza István miniszterelnökök pályáját, a Tiszák és a református egyház kapcsolatát, valamint betekintést nyerhetünk többek között a korabeli kastély mindennapjaiba. "
+                "1772-ben épült fel a Tisza család geszti birtokán az a barokk stílusban épült kúria, amely később a kialakításra került kastély magját alkotta. Az épület már a XVIII. század végén is L alaprajzú volt, mindkét szárny alatt pince nyugodott. A század végére készült el a kastély fő szárnyának középső traktusa, a kocsiáthajtó fölé épített négytengelyes, klasszicizáló késő barokk stílusú pavilon. Az első birtokos beköltözése után került kiépítésre az angolkert. A 15 hektáros kertet a XIX. század elején alakították ki egy kisebb erdőrészből. Az egykor locsolóhálózattal is ellátott terület napjainkban már csak 5,4 hektárt tesz ki. Tisza Kálmán 1856-ban került a geszti uradalom élére. Birtokossága ideje alatt az addig földszintes épületre egy emeletet húztak fel, és ekkor kerültek kialakításra többek között a miniszterelnök dolgozószobája, a Nagy- és Kisszalon, illetve a grófnő dolgozó szobája, továbbá a kastély keleti szárnyának külső terasza is ekkor épült. A kastély 1902-ben lett Tisza Istváné, aki további átalakításokat végeztetett az épületen. Ekkor került sor az elektromos áram bevezetésére, a telefonvonal bekötésére, valamint a padlástérben egy új hideg-meleg vizes tartályt helyeztek el. Tisza István fia, Kálmán-Lajos birtokossága idején korszerűsítették a nyílászárókat. A második világháború után, a kastély teljes berendezése megsemmisült, Kálmán-Lajos pedig az Egyesült Államokba költözött. Az államszocializmus idején az épület egy iskolának és művelődésháznak, később könyvtárnak adott otthont. A kastélyban otthont adó, a család történetét bemutató kiállítás számos attrakcióval várja a látogatókat. A XXI. század technológiáját felhasználva megismerhetjük a Tisza családot, Tisza Kálmán és Tisza István miniszterelnökök pályáját, a Tiszák és a református egyház kapcsolatát, valamint betekintést nyerhetünk többek között a korabeli kastély mindennapjaiba."
             ],
-            "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Tisza-kast%C3%A9ly_Geszt_%28M%C3%A9sz%C3%B6ly_G%C3%A9za%29.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Tisza-kast%C3%A9ly_Geszt_%28M%C3%A9sz%C3%B6ly_G%C3%A9za%29.jpg",
+            "events": [
+                {
+                    "year": 1772,
+                    "icon": "built",
+                    "title": "Építés",
+                    "description": "1772-ben épült fel a Tisza család geszti birtokán a barokk stílusban épült kúria."
+                },
+                {
+                    "year": 1800,
+                    "title": "Bővítés",
+                    "description": "A 15 hektáros kertet a XIX. század elején alakították ki egy kisebb erdőrészből."
+                },
+                {
+                    "year": 1856,
+                    "title": "Tisza Kálmán került az uradalom élére",
+                    "description": "Birtokossága ideje alatt az addig földszintes épületre egy emeletet húztak fel"
+                }
+            ]
         }
     }
 

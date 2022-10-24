@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./styles/container.css">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/background.css">
+    <link rel="stylesheet" href="./styles/slider.css">
 
     <style>
         body {
@@ -61,21 +62,23 @@
         <div class="section-history">
             <h2>Idővonal</h2>
 
-            <input id="history-slider" type="range" min="0" max="10" oninput="OnHistoryChange(event)">
-            <p id="history-label-year"></p>
+            <input id="history-slider" style="width: 50%;" type="range" min="17" max="20" oninput="OnHistoryChange(event)">
+            <span id="history-label-year"></span>
 
             <div id="history-list">
 
             </div>
 
             <script>
+                const historySteps = 25
+
                 function SetHistorySliderValues(minYear, maxYear) {
                     /** @type {HTMLInputElement} */
                     const slider = document.getElementById('history-slider')
-                    slider.min = minYear / 100
-                    slider.max = maxYear / 100
-                    const year = slider.valueAsNumber * 100
-                    SetHistoryYearLabel((year-99) + ' - ' + year)
+                    slider.min = minYear / historySteps
+                    slider.max = maxYear / historySteps
+                    const year = slider.valueAsNumber * historySteps
+                    SetHistoryYearLabel((year-historySteps+1) + ' - ' + year)
                 }
 
                 /** @param {Event} e */
@@ -83,8 +86,8 @@
                     /** @type {HTMLInputElement} */
                     const slider = document.getElementById('history-slider')
                     const historyList = document.getElementById('history-list')
-                    const year = slider.valueAsNumber * 100
-                    SetHistoryYearLabel((year-99) + ' - ' + year)
+                    const year = slider.valueAsNumber * historySteps
+                    SetHistoryYearLabel((year-historySteps+1) + ' - ' + year)
 
                     const oldElements = historyList.getElementsByTagName('div')
                     while (oldElements.length > 0) {
@@ -163,7 +166,7 @@
                         const eventList = []
                         for (let j = 0; j < castle.events.length; j++) {
                             const event = castle.events[j]
-                            if (Math.floor(event.year / 100) * 100 !== year - 100) { continue }
+                            if (Math.floor(event.year / historySteps) * historySteps !== year - historySteps) { continue }
                             eventList.push(event)
                         }
                         if (eventList.length > 0) {
@@ -175,7 +178,7 @@
                     }
                 }
 
-                SetHistorySliderValues(1000, 2000)
+                SetHistorySliderValues(1800, 2000)
             </script>
         </div>
     
