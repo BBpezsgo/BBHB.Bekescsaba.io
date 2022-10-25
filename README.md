@@ -20,3 +20,5 @@ Készíts weboldalt, amely bemutatja a fenti témát. Legalább 20 tétel legyen
 - [Bencsik Attila](https://github.com/Sco-Ttt)
 - [Hugyecz Máté](https://github.com/Hmate11)
 - [Bánszky Balázs](https://github.com/BBpezsgo)
+
+# [PowerPoint](https://nemesgszi-my.sharepoint.com/:p:/r/personal/barkoczivivien_gszi_edu_hu/_layouts/15/doc2.aspx?sourcedoc=%7BCCD9C814-6BD0-44CC-8D36-5CEA234DA0AE%7D&file=Bemutat%C3%B3.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1&ct=1666593592282&wdOrigin=OFFICECOM-WEB.MAIN.REC&cid=054c0d05-8162-4db2-b88a-222abce66beb)
