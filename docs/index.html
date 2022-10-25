@@ -23,10 +23,10 @@
 
         .map-frame {
             width: calc(100% - 30px);
-            height: 400px;
+            height: 500px;
             margin: 10px;
             box-shadow: #000a 3px 3px 3px;
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         .section-history {
@@ -53,7 +53,9 @@
 
         <h1>Békés-megye Kastélyai</h1>
 
-        <iframe src="./map-iframe.html" class="map-frame"></iframe>
+        <div style="text-align: center;">
+            <iframe src="./map-iframe.html" class="map-frame"></iframe>
+        </div>
     
         <div id="castle-list">
 
@@ -189,6 +191,16 @@
             const mapIframe = document.getElementsByTagName('iframe')[0]
             const castleList = document.getElementById('castle-list')
     
+
+            fetch('./jsons/map.json')
+            .then((response) => {
+                response.json()
+                .then((json) => {
+                    mapIframe.style.maxWidth = json["map-size"].width + 'px'
+                    mapIframe.style.maxHeight = json["map-size"].height + 'px'
+                })
+            })
+
             var castles = []
             fetch('./jsons/castles.json')
             .then((response) => {
